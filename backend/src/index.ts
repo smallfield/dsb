@@ -1,5 +1,6 @@
 import { Hono } from 'hono'
 import { cors } from 'hono/cors'
+import { serveStatic } from 'hono/cloudflare-workers'
 
 const app = new Hono()
 
@@ -56,3 +57,16 @@ app.get('/departure', async (c) => {
 })
 
 export default app
+
+// @ts-ignore
+import manifest from '__STATIC_CONTENT_MANIFEST'
+
+app.get('/*', serveStatic({
+  root: './',
+  manifest,
+  rewriteRequestPath: (path) => {
+    // 拡張子が含まれていないパスへのアクセスは index.html とみなす
+    return path.includes('.') ? path : '/index.html'
+  }
+}))
+

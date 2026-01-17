@@ -1,2 +1,7 @@
 name = "dsb-backend"
 compatibility_date = "2023-12-01"
+
+[site]
+bucket = "../frontend/dist"
+entry-point = "workers-site"
+
