@@ -1,0 +1,408 @@
+<script setup>
+import { ref, computed, onMounted, onUnmounted, watch } from 'vue'
+
+const props = defineProps({
+  initialStationA: {
+    type: String,
+    default: 'KH'
+  },
+  initialStationB: {
+    type: String,
+    default: 'ØRE'
+  }
+})
+
+// State
+const stationA = ref(props.initialStationA)
+const stationB = ref(props.initialStationB)
+const departuresA = ref(null)
+const departuresB = ref(null)
+const loading = ref(false)
+const error = ref(null)
+const now = ref(new Date())
+let timer = null
+
+// Date/Time Helpers
+const parseDate = (str) => {
+  // Format: "DD-MM-YYYY HH:mm:ss"
+  if (!str) return null
+  const [datePart, timePart] = str.split(' ')
+  const [day, month, year] = datePart.split('-')
+  const [hour, minute, second] = timePart.split(':')
+  return new Date(year, month - 1, day, hour, minute, second)
+}
+
+const getRelativeTime = (dateStr) => {
+  const date = parseDate(dateStr)
+  if (!date) return ''
+  
+  const diffMs = date - now.value
+  const diffMins = Math.floor(diffMs / 60000)
+  
+  if (diffMins < 0) return 'Departed'
+  if (diffMins === 0) return 'Now'
+  if (diffMins < 60) return `${diffMins} min`
+  
+  // Return HH:MM for later trains
+  return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+}
+
+const formatTime = (dateStr) => {
+  const date = parseDate(dateStr)
+  return date ? date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : ''
+}
+
+// Logic to check if a train stops at a specific station
+const trainStopsAt = (train, destinationStationId) => {
+  if (!train.Routes) return false
+  return train.Routes.some(route => 
+    route.Stations && route.Stations.some(s => s.StationId === destinationStationId)
+  )
+}
+
+// Filtered Computed Properties
+const trainsAtoB = computed(() => {
+  if (!departuresA.value?.Trains) return []
+  return departuresA.value.Trains.filter(train => trainStopsAt(train, stationB.value))
+})
+
+const trainsBtoA = computed(() => {
+  if (!departuresB.value?.Trains) return []
+  return departuresB.value.Trains.filter(train => trainStopsAt(train, stationA.value))
+})
+
+// Fetching Data
+const fetchDepartures = async () => {
+  loading.value = true
+  error.value = null
+  
+  try {
+    const [resA, resB] = await Promise.all([
+      fetch(`/departure?path=/departure/${stationA.value}/dinstation/`),
+      fetch(`/departure?path=/departure/${stationB.value}/dinstation/`)
+    ])
+
+    if (!resA.ok) throw new Error(`Failed to fetch ${stationA.value}: ${resA.status}`)
+    if (!resB.ok) throw new Error(`Failed to fetch ${stationB.value}: ${resB.status}`)
+
+    const dataA = await resA.json()
+    const dataB = await resB.json()
+
+    // Handle nested structure if necessary (based on API viewing earlier)
+    departuresA.value = dataA.data || dataA
+    departuresB.value = dataB.data || dataB
+
+  } catch (e) {
+    console.error(e)
+    error.value = e.message
+  } finally {
+    loading.value = false
+  }
+}
+
+// Lifecycle
+onMounted(() => {
+  fetchDepartures()
+  timer = setInterval(() => {
+    now.value = new Date()
+  }, 1000)
+})
+
+onUnmounted(() => {
+  if (timer) clearInterval(timer)
+})
+
+watch([stationA, stationB], () => {
+    // Optional: Auto-fetch on station change, or just let user click refresh
+    // fetchDepartures() 
+})
+
+</script>
+
+<template>
+  <div class="train-board">
+    <div class="controls">
+      <div class="station-inputs">
+        <input v-model="stationA" placeholder="Station A (e.g. KH)" class="station-input" />
+        <span class="arrow">↔</span>
+        <input v-model="stationB" placeholder="Station B (e.g. ØRE)" class="station-input" />
+      </div>
+      <button @click="fetchDepartures" :disabled="loading" class="refresh-btn">
+        {{ loading ? 'Updating...' : 'Refresh Board' }}
+      </button>
+    </div>
+
+    <div v-if="error" class="error-msg">{{ error }}</div>
+
+    <div class="board-container">
+      <!-- Table A to B -->
+      <div class="board-column">
+        <h2 class="direction-header">
+          <span class="station-code">{{ stationA }}</span>
+          <span class="to-arrow">→</span>
+          <span class="station-code">{{ stationB }}</span>
+        </h2>
+        
+        <div class="table-wrapper">
+          <table class="departure-table">
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>Train</th>
+                <th>To</th>
+                <th>Plat.</th>
+                <th>Dep.</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="train in trainsAtoB" :key="train.TrainId" :class="{ 'cancelled': train.IsCancelled }">
+                <td class="time-cell">{{ formatTime(train.ScheduleTime) }}</td>
+                <td class="train-cell">
+                   <div class="train-type">{{ train.PublicTrainId }}</div>
+                </td>
+                <td class="dest-cell">
+                   {{ train.Routes?.[0]?.DestinationStationId || 'Unknown' }}
+                </td>
+                <td class="platform-cell">{{ train.TrackCurrent }}</td>
+                <td class="countdown-cell" :class="{ 'now': getRelativeTime(train.ScheduleTime) === 'Now' }">
+                  {{ train.IsCancelled ? 'Cancelled' : getRelativeTime(train.ScheduleTime) }}
+                </td>
+              </tr>
+              <tr v-if="trainsAtoB.length === 0 && !loading">
+                <td colspan="5" class="empty-state">No trains found</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Table B to A -->
+      <div class="board-column">
+        <h2 class="direction-header">
+          <span class="station-code">{{ stationB }}</span>
+          <span class="to-arrow">→</span>
+          <span class="station-code">{{ stationA }}</span>
+        </h2>
+
+        <div class="table-wrapper">
+          <table class="departure-table">
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>Train</th>
+                <th>To</th>
+                <th>Plat.</th>
+                <th>Dep.</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="train in trainsBtoA" :key="train.TrainId" :class="{ 'cancelled': train.IsCancelled }">
+                <td class="time-cell">{{ formatTime(train.ScheduleTime) }}</td>
+                <td class="train-cell">
+                   <div class="train-type">{{ train.PublicTrainId }}</div>
+                </td>
+                <td class="dest-cell">
+                   {{ train.Routes?.[0]?.DestinationStationId || 'Unknown' }}
+                </td>
+                <td class="platform-cell">{{ train.TrackCurrent }}</td>
+                <td class="countdown-cell" :class="{ 'now': getRelativeTime(train.ScheduleTime) === 'Now' }">
+                   {{ train.IsCancelled ? 'Cancelled' : getRelativeTime(train.ScheduleTime) }}
+                </td>
+              </tr>
+              <tr v-if="trainsBtoA.length === 0 && !loading">
+                 <td colspan="5" class="empty-state">No trains found</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<style scoped>
+.train-board {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  color: #fff;
+}
+
+.controls {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.station-input {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  border-radius: 6px;
+  width: 80px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.arrow {
+  font-size: 1.5rem;
+  color: #aaa;
+}
+
+.refresh-btn {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.refresh-btn:hover {
+  background: #2980b9;
+}
+
+.refresh-btn:disabled {
+  background: #555;
+  cursor: not-allowed;
+}
+
+.board-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.board-column {
+  background: #2c3e50;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.direction-header {
+  background: #1a252f;
+  margin: 0;
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 2px solid #34495e;
+  font-size: 1.5rem;
+}
+
+.station-code {
+  color: #f1c40f;
+  font-weight: bold;
+}
+
+.to-arrow {
+  margin: 0 0.5rem;
+  color: #7f8c8d;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.departure-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.departure-table th {
+  background: #34495e;
+  padding: 0.8rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.departure-table td {
+  padding: 0.8rem;
+  border-bottom: 1px solid #34495e;
+}
+
+.time-cell {
+  font-weight: bold;
+  color: #ecf0f1;
+}
+
+.train-type {
+  background: #e74c3c;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.dest-cell {
+  color: #ecf0f1;
+}
+
+.platform-cell {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #f1c40f;
+}
+
+.countdown-cell {
+  text-align: right;
+  font-weight: bold;
+  color: #2ecc71;
+}
+
+.countdown-cell.now {
+  color: #e74c3c;
+  animation: blink 1s infinite;
+}
+
+.cancelled {
+  background-color: rgba(231, 76, 60, 0.2);
+  color: #e74c3c;
+  text-decoration: line-through;
+}
+
+.cancelled .time-cell,
+.cancelled .dest-cell,
+.cancelled .platform-cell,
+.cancelled .countdown-cell {
+  color: #e74c3c;
+}
+
+.cancelled .train-type {
+  text-decoration: none; /* Keep train number readable? User asked for line-through row, usually implies text too */
+  background: #c0392b;
+  opacity: 0.7;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 2rem;
+  color: #bdc3c7;
+  font-style: italic;
+}
+
+@keyframes blink {
+  50% { opacity: 0.5; }
+}
+
+@media (max-width: 768px) {
+  .board-container {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
