@@ -1,5 +1,6 @@
 <script setup>
 import { ref, computed, onMounted, onUnmounted, watch } from 'vue'
+import { STATIONS } from '../master/stations'
 
 const props = defineProps({
   initialStationA: {
@@ -21,6 +22,16 @@ const loading = ref(false)
 const error = ref(null)
 const now = ref(new Date())
 let timer = null
+
+// Station Data
+const stationOptions = computed(() => {
+  return STATIONS.filter(s => s.searchable)
+})
+
+const getStationName = (id) => {
+  const station = STATIONS.find(s => s.key === id)
+  return station ? station.value : id
+}
 
 // Date/Time Helpers
 const parseDate = (str) => {
@@ -82,8 +93,8 @@ const fetchDepartures = async () => {
       fetch(`/departure?path=/departure/${stationB.value}/dinstation/`)
     ])
 
-    if (!resA.ok) throw new Error(`Failed to fetch ${stationA.value}: ${resA.status}`)
-    if (!resB.ok) throw new Error(`Failed to fetch ${stationB.value}: ${resB.status}`)
+    if (!resA.ok) throw new Error(`Failed to fetch ${getStationName(stationA.value)}: ${resA.status}`)
+    if (!resB.ok) throw new Error(`Failed to fetch ${getStationName(stationB.value)}: ${resB.status}`)
 
     const dataA = await resA.json()
     const dataB = await resB.json()
@@ -123,9 +134,33 @@ watch([stationA, stationB], () => {
   <div class="train-board">
     <div class="controls">
       <div class="station-inputs">
-        <input v-model="stationA" placeholder="Station A (e.g. KH)" class="station-input" />
+        <v-autocomplete
+          v-model="stationA"
+          :items="stationOptions"
+          item-title="value"
+          item-value="key"
+          label="Station A"
+          hide-details
+          variant="outlined"
+          bg-color="rgba(0,0,0,0.3)"
+          theme="dark"
+          density="compact"
+          class="station-autocomplete"
+        ></v-autocomplete>
         <span class="arrow">↔</span>
-        <input v-model="stationB" placeholder="Station B (e.g. ØRE)" class="station-input" />
+        <v-autocomplete
+          v-model="stationB"
+          :items="stationOptions"
+          item-title="value"
+          item-value="key"
+          label="Station B"
+          hide-details
+          variant="outlined"
+          bg-color="rgba(0,0,0,0.3)"
+          theme="dark"
+          density="compact"
+          class="station-autocomplete"
+        ></v-autocomplete>
       </div>
       <button @click="fetchDepartures" :disabled="loading" class="refresh-btn">
         {{ loading ? 'Updating...' : 'Refresh Board' }}
@@ -138,9 +173,9 @@ watch([stationA, stationB], () => {
       <!-- Table A to B -->
       <div class="board-column">
         <h2 class="direction-header">
-          <span class="station-code">{{ stationA }}</span>
+          <span class="station-code">{{ getStationName(stationA) }}</span>
           <span class="to-arrow">→</span>
-          <span class="station-code">{{ stationB }}</span>
+          <span class="station-code">{{ getStationName(stationB) }}</span>
         </h2>
 
         <div class="table-wrapper">
@@ -161,7 +196,7 @@ watch([stationA, stationB], () => {
                   <div class="train-type">{{ train.PublicTrainId }}</div>
                 </td>
                 <td class="dest-cell">
-                  {{ train.Routes?.[0]?.DestinationStationId || 'Unknown' }}
+                  {{ getStationName(train.Routes?.[0]?.DestinationStationId) || 'Unknown' }}
                 </td>
                 <td class="platform-cell">{{ train.TrackCurrent }}</td>
                 <td class="countdown-cell" :class="{ 'now': getRelativeTime(train.ScheduleTime) === 'Now' }">
@@ -179,9 +214,9 @@ watch([stationA, stationB], () => {
       <!-- Table B to A -->
       <div class="board-column">
         <h2 class="direction-header">
-          <span class="station-code">{{ stationB }}</span>
+          <span class="station-code">{{ getStationName(stationB) }}</span>
           <span class="to-arrow">→</span>
-          <span class="station-code">{{ stationA }}</span>
+          <span class="station-code">{{ getStationName(stationA) }}</span>
         </h2>
 
         <div class="table-wrapper">
@@ -202,7 +237,7 @@ watch([stationA, stationB], () => {
                   <div class="train-type">{{ train.PublicTrainId }}</div>
                 </td>
                 <td class="dest-cell">
-                  {{ train.Routes?.[0]?.DestinationStationId || 'Unknown' }}
+                  {{ getStationName(train.Routes?.[0]?.DestinationStationId) || 'Unknown' }}
                 </td>
                 <td class="platform-cell">{{ train.TrackCurrent }}</td>
                 <td class="countdown-cell" :class="{ 'now': getRelativeTime(train.ScheduleTime) === 'Now' }">
@@ -241,16 +276,14 @@ watch([stationA, stationB], () => {
   backdrop-filter: blur(10px);
 }
 
-.station-input {
-  background: rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: white;
-  padding: 0.5rem 1rem;
-  font-size: 1.2rem;
-  border-radius: 6px;
-  width: 80px;
-  text-align: center;
-  text-transform: uppercase;
+.station-inputs {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.station-autocomplete {
+  width: 250px;
 }
 
 .arrow {
@@ -267,6 +300,7 @@ watch([stationA, stationB], () => {
   cursor: pointer;
   font-weight: 600;
   transition: all 0.2s;
+  height: 48px;
 }
 
 .refresh-btn:hover {

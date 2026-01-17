@@ -3,15 +3,17 @@ import TrainBoard from './components/TrainBoard.vue'
 </script>
 
 <template>
-  <div class="app-container">
-    <header>
-      <h1>DSB Live Departures</h1>
-    </header>
+  <v-app theme="dark">
+    <div class="app-container">
+      <header>
+        <h1>DSB Live Departures</h1>
+      </header>
 
-    <main>
-      <TrainBoard />
-    </main>
-  </div>
+      <main>
+        <TrainBoard />
+      </main>
+    </div>
+  </v-app>
 </template>
 
 <style>

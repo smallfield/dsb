@@ -1,0 +1,5711 @@
+export const STATIONS = [{
+  value: "Aalborg",
+  searchable: !0,
+  key: "AB",
+  source: "tog"
+}, {
+  value: "Aalborg Lufthavn ✈︎",
+  searchable: !0,
+  key: "ABL",
+  source: "tog"
+}, {
+  value: "Aalborg Vestby",
+  searchable: !0,
+  key: "ABV",
+  source: "tog"
+}, {
+  value: "Arden",
+  searchable: !0,
+  key: "AD",
+  source: "tog"
+}, {
+  value: "Alken",
+  searchable: !0,
+  key: "AK",
+  source: "tog"
+}, {
+  value: "Aarup",
+  searchable: !0,
+  key: "AP",
+  source: "tog"
+}, {
+  value: "Aarhus H",
+  searchable: !0,
+  key: "AR",
+  source: "tog"
+}, {
+  value: "Baunhøj",
+  searchable: !0,
+  key: "BAH",
+  source: "tog"
+}, {
+  value: "Brande",
+  searchable: !0,
+  key: "BB",
+  source: "tog"
+}, {
+  value: "Bred",
+  searchable: !0,
+  key: "BD",
+  source: "tog"
+}, {
+  value: "Brejning",
+  searchable: !0,
+  key: "BET",
+  source: "tog"
+}, {
+  value: "Bording",
+  searchable: !0,
+  key: "BG",
+  source: "tog"
+}, {
+  value: "Birk Centerpark",
+  searchable: !0,
+  key: "BIC",
+  source: "tog"
+}, {
+  value: "Billum",
+  searchable: !0,
+  key: "BIM",
+  source: "tog"
+}, {
+  value: "Bjerringbro",
+  searchable: !0,
+  key: "BJ",
+  source: "tog"
+}, {
+  value: "Børkop",
+  searchable: !0,
+  key: "BK",
+  source: "tog"
+}, {
+  value: "Brønderslev",
+  searchable: !0,
+  key: "BL",
+  source: "tog"
+}, {
+  value: "Bramming",
+  searchable: !0,
+  key: "BM",
+  source: "tog"
+}, {
+  value: "Bedsted Thy",
+  searchable: !0,
+  key: "BN",
+  source: "tog"
+}, {
+  value: "Borup",
+  searchable: !0,
+  key: "BO",
+  source: "tog"
+}, {
+  value: "Boulevarden",
+  searchable: !0,
+  key: "BOT",
+  source: "tog"
+}, {
+  value: "Brørup",
+  searchable: !0,
+  key: "BP",
+  source: "tog"
+}, {
+  value: "Brøns",
+  searchable: !0,
+  key: "BRR",
+  source: "tog"
+}, {
+  value: "Borris",
+  searchable: !0,
+  key: "BS",
+  source: "tog"
+}, {
+  value: "Bur",
+  searchable: !0,
+  key: "BU",
+  source: "tog"
+}, {
+  value: "Bunken",
+  searchable: !0,
+  key: "BUK",
+  source: "tog"
+}, {
+  value: "Bredebro",
+  searchable: !0,
+  key: "BW",
+  source: "tog"
+}, {
+  value: "CPH Lufthavn ✈︎",
+  searchable: !0,
+  key: "CPH",
+  source: "tog"
+}, {
+  value: "Døstrup Sønderjylland",
+  searchable: !0,
+  key: "DS",
+  source: "tog"
+}, {
+  value: "Dyreby",
+  searchable: !0,
+  key: "DY",
+  source: "tog"
+}, {
+  value: "Ejby",
+  searchable: !0,
+  key: "EB",
+  source: "tog"
+}, {
+  value: "Eskilstrup",
+  searchable: !0,
+  key: "EK",
+  source: "tog"
+}, {
+  value: "Emmersbæk",
+  searchable: !0,
+  key: "EMM",
+  source: "tog"
+}, {
+  value: "Esbjerg",
+  searchable: !0,
+  key: "ES",
+  source: "tog"
+}, {
+  value: "Spangsbjerg",
+  searchable: !0,
+  key: "ESN",
+  source: "tog"
+}, {
+  value: "Engesvang",
+  searchable: !0,
+  key: "EV",
+  source: "tog"
+}, {
+  value: "Fredericia",
+  searchable: !0,
+  key: "FA",
+  source: "tog"
+}, {
+  value: "Frederikshavn",
+  searchable: !0,
+  key: "FH",
+  source: "tog"
+}, {
+  value: "Frederikshavnsvej",
+  searchable: !0,
+  key: "FHV",
+  source: "tog"
+}, {
+  value: "Fruens Bøge",
+  searchable: !0,
+  key: "FRS",
+  source: "tog"
+}, {
+  value: "Frisvadvej",
+  searchable: !0,
+  key: "FRT",
+  source: "tog"
+}, {
+  value: "Gelsted",
+  searchable: !0,
+  key: "GD",
+  source: "tog"
+}, {
+  value: "Gjesing",
+  searchable: !0,
+  key: "GJE",
+  source: "tog"
+}, {
+  value: "Gødstrup",
+  searchable: !0,
+  key: "GP",
+  source: "tog"
+}, {
+  value: "Gredstedbro",
+  searchable: !0,
+  key: "GS",
+  source: "tog"
+}, {
+  value: "Gråsten",
+  searchable: !0,
+  key: "GST",
+  source: "tog"
+}, {
+  value: "Gadstrup",
+  searchable: !0,
+  key: "GT",
+  source: "tog"
+}, {
+  value: "Guldager",
+  searchable: !0,
+  key: "GU",
+  source: "tog"
+}, {
+  value: "Give",
+  searchable: !0,
+  key: "GW",
+  source: "tog"
+}, {
+  value: "Glumsø",
+  searchable: !0,
+  key: "GZ",
+  source: "tog"
+}, {
+  value: "Espergærde",
+  searchable: !0,
+  key: "GÆ",
+  source: "tog"
+}, {
+  value: "Gørding",
+  searchable: !0,
+  key: "GØ",
+  source: "tog"
+}, {
+  value: "Gårde",
+  searchable: !0,
+  key: "GÅ",
+  source: "tog"
+}, {
+  value: "Hadsten",
+  searchable: !0,
+  key: "HA",
+  source: "tog"
+}, {
+  value: "Hobro",
+  searchable: !0,
+  key: "HB",
+  source: "tog"
+}, {
+  value: "Havdrup",
+  searchable: !0,
+  key: "HD",
+  source: "tog"
+}, {
+  value: "Hee",
+  searchable: !0,
+  key: "HE",
+  source: "tog"
+}, {
+  value: "Hedensted",
+  searchable: !0,
+  key: "HED",
+  source: "tog"
+}, {
+  value: "Herfølge",
+  searchable: !0,
+  key: "HF",
+  source: "tog"
+}, {
+  value: "Helsingør",
+  searchable: !0,
+  key: "HG",
+  source: "tog"
+}, {
+  value: "Herregårdsparken",
+  searchable: !0,
+  key: "HGP",
+  source: "tog"
+}, {
+  value: "Hedehusene",
+  searchable: !0,
+  key: "HH",
+  source: "tog"
+}, {
+  value: "Hirtshals",
+  searchable: !0,
+  key: "HHS",
+  source: "tog"
+}, {
+  value: "Hjørring",
+  searchable: !0,
+  key: "HJ",
+  source: "tog"
+}, {
+  value: "Hjallese",
+  searchable: !0,
+  key: "HJS",
+  source: "tog"
+}, {
+  value: "Hjørring Øst",
+  searchable: !0,
+  key: "HJØ",
+  source: "tog"
+}, {
+  value: "Holbæk",
+  searchable: !0,
+  key: "HK",
+  source: "tog"
+}, {
+  value: "Hellerup",
+  searchable: !0,
+  key: "HL",
+  source: "tog"
+}, {
+  value: "Hjerm",
+  searchable: !0,
+  key: "HM",
+  source: "tog"
+}, {
+  value: "Hinnerup",
+  searchable: !0,
+  key: "HN",
+  source: "tog"
+}, {
+  value: "Henne",
+  searchable: !0,
+  key: "HNN",
+  source: "tog"
+}, {
+  value: "Holstebro",
+  searchable: !0,
+  key: "HO",
+  source: "tog"
+}, {
+  value: "Horne",
+  searchable: !0,
+  key: "HON",
+  source: "tog"
+}, {
+  value: "Holmstrup",
+  searchable: !0,
+  key: "HP",
+  source: "tog"
+}, {
+  value: "Holsted",
+  searchable: !0,
+  key: "HQ",
+  source: "tog"
+}, {
+  value: "Herning",
+  searchable: !0,
+  key: "HR",
+  source: "tog"
+}, {
+  value: "Herning Messecenter",
+  searchable: !0,
+  key: "HRM",
+  source: "tog"
+}, {
+  value: "Horsens",
+  searchable: !0,
+  key: "HS",
+  source: "tog"
+}, {
+  value: "Høje Taastrup",
+  searchable: !0,
+  key: "HTÅ",
+  source: "tog"
+}, {
+  value: "Hammerum",
+  searchable: !0,
+  key: "HU",
+  source: "tog"
+}, {
+  value: "Hulsig",
+  searchable: !0,
+  key: "HUL",
+  source: "tog"
+}, {
+  value: "Humlebæk",
+  searchable: !0,
+  key: "HUM",
+  source: "tog"
+}, {
+  value: "Hvalsø",
+  searchable: !0,
+  key: "HV",
+  source: "tog"
+}, {
+  value: "Hvidbjerg",
+  searchable: !0,
+  key: "HW",
+  source: "tog"
+}, {
+  value: "Hørning",
+  searchable: !0,
+  key: "HX",
+  source: "tog"
+}, {
+  value: "Hyllerslev",
+  searchable: !0,
+  key: "HYV",
+  source: "tog"
+}, {
+  value: "Haslev",
+  searchable: !0,
+  key: "HZ",
+  source: "tog"
+}, {
+  value: "Hørdum",
+  searchable: !0,
+  key: "HÆ",
+  source: "tog"
+}, {
+  value: "Højslev",
+  searchable: !0,
+  key: "HØ",
+  source: "tog"
+}, {
+  value: "Højby (Fyn)",
+  searchable: !0,
+  key: "HØS",
+  source: "tog"
+}, {
+  value: "Vildbjerg",
+  searchable: !0,
+  key: "ID",
+  source: "tog"
+}, {
+  value: "Ikast",
+  searchable: !0,
+  key: "IK",
+  source: "tog"
+}, {
+  value: "Sig",
+  searchable: !0,
+  key: "IS",
+  source: "tog"
+}, {
+  value: "Janderup",
+  searchable: !0,
+  key: "JAD",
+  source: "tog"
+}, {
+  value: "Jegum",
+  searchable: !0,
+  key: "JEG",
+  source: "tog"
+}, {
+  value: "Jerup",
+  searchable: !0,
+  key: "JEU",
+  source: "tog"
+}, {
+  value: "Jelling",
+  searchable: !0,
+  key: "JL",
+  source: "tog"
+}, {
+  value: "Jerne",
+  searchable: !0,
+  key: "JNE",
+  source: "tog"
+}, {
+  value: "Jyderup",
+  searchable: !0,
+  key: "JY",
+  source: "tog"
+}, {
+  value: "Kauslunde",
+  searchable: !0,
+  key: "KA",
+  source: "tog"
+}, {
+  value: "Kalundborg",
+  searchable: !0,
+  key: "KB",
+  source: "tog"
+}, {
+  value: "Kalundborg Øst",
+  searchable: !0,
+  key: "KBØ",
+  source: "tog"
+}, {
+  value: "Kolding",
+  searchable: !0,
+  key: "KD",
+  source: "tog"
+}, {
+  value: "København H",
+  searchable: !0,
+  key: "KH",
+  source: "tog"
+}, {
+  value: "Køge",
+  searchable: !0,
+  key: "KJ",
+  source: "tog"
+}, {
+  value: "Køge Nord",
+  searchable: !0,
+  key: "KJN",
+  source: "tog"
+}, {
+  value: "Østerport",
+  searchable: !0,
+  key: "KK",
+  source: "tog"
+}, {
+  value: "Klampenborg",
+  searchable: !0,
+  key: "KL",
+  source: "tog"
+}, {
+  value: "Nørreport",
+  searchable: !0,
+  key: "KN",
+  source: "tog"
+}, {
+  value: "Knabstrup",
+  searchable: !0,
+  key: "KS",
+  source: "tog"
+}, {
+  value: "Kvægtorvet",
+  searchable: !0,
+  key: "KT",
+  source: "tog"
+}, {
+  value: "Kvissel",
+  searchable: !0,
+  key: "KV",
+  source: "tog"
+}, {
+  value: "Kværndrup",
+  searchable: !0,
+  key: "KVS",
+  source: "tog"
+}, {
+  value: "Kliplev",
+  searchable: !0,
+  key: "KW",
+  source: "tog"
+}, {
+  value: "Kibæk",
+  searchable: !0,
+  key: "KÆ",
+  source: "tog"
+}, {
+  value: "Korsør",
+  searchable: !0,
+  key: "KØ",
+  source: "tog"
+}, {
+  value: "Laven",
+  searchable: !0,
+  key: "LA",
+  source: "tog"
+}, {
+  value: "Langå",
+  searchable: !0,
+  key: "LG",
+  source: "tog"
+}, {
+  value: "Lilleheden",
+  searchable: !0,
+  key: "LHE",
+  source: "tog"
+}, {
+  value: "Lindholm",
+  searchable: !0,
+  key: "LIH",
+  source: "tog"
+}, {
+  value: "Lejre",
+  searchable: !0,
+  key: "LJ",
+  source: "tog"
+}, {
+  value: "Lunderskov",
+  searchable: !0,
+  key: "LK",
+  source: "tog"
+}, {
+  value: "Lem",
+  searchable: !0,
+  key: "LM",
+  source: "tog"
+}, {
+  value: "Lyngs",
+  searchable: !0,
+  key: "LN",
+  source: "tog"
+}, {
+  value: "Lundby",
+  searchable: !0,
+  key: "LU",
+  source: "tog"
+}, {
+  value: "Lunde",
+  searchable: !0,
+  key: "LUJ",
+  source: "tog"
+}, {
+  value: "Langeskov",
+  searchable: !0,
+  key: "LV",
+  source: "tog"
+}, {
+  value: "Lille Skensved",
+  searchable: !0,
+  key: "LW",
+  source: "tog"
+}, {
+  value: "Løftgård",
+  searchable: !0,
+  key: "LØT",
+  source: "tog"
+}, {
+  value: "Middelfart",
+  searchable: !0,
+  key: "MD",
+  source: "tog"
+}, {
+  value: "Mørkøv",
+  searchable: !0,
+  key: "MØ",
+  source: "tog"
+}, {
+  value: "Nørre Aaby",
+  searchable: !0,
+  key: "NA",
+  source: "tog"
+}, {
+  value: "Napstjert",
+  searchable: !0,
+  key: "NAP",
+  source: "tog"
+}, {
+  value: "Nørre Nebel",
+  searchable: !0,
+  key: "NBL",
+  source: "tog"
+}, {
+  value: "København Syd",
+  searchable: !0,
+  key: "NEL",
+  source: "tog"
+}, {
+  value: "Nykøbing F",
+  searchable: !0,
+  key: "NF",
+  source: "tog"
+}, {
+  value: "Nyborg",
+  searchable: !0,
+  key: "NG",
+  source: "tog"
+}, {
+  value: "Nivå",
+  searchable: !0,
+  key: "NI",
+  source: "tog"
+}, {
+  value: "Oddesund Nord",
+  searchable: !0,
+  key: "NO",
+  source: "tog"
+}, {
+  value: "Nørre Alslev",
+  searchable: !0,
+  key: "NV",
+  source: "tog"
+}, {
+  value: "Næstved",
+  searchable: !0,
+  key: "NÆ",
+  source: "tog"
+}, {
+  value: "Næstved Nord",
+  searchable: !0,
+  key: "NÆN",
+  source: "tog"
+}, {
+  value: "Odense",
+  searchable: !0,
+  key: "OD",
+  source: "tog"
+}, {
+  value: "Skalborg",
+  searchable: !0,
+  key: "OG",
+  source: "tog"
+}, {
+  value: "Orehoved",
+  searchable: !0,
+  key: "OH",
+  source: "tog"
+}, {
+  value: "Vojens",
+  searchable: !0,
+  key: "OJ",
+  source: "tog"
+}, {
+  value: "Kokkedal",
+  searchable: !0,
+  key: "OK",
+  source: "tog"
+}, {
+  value: "Oksbøl",
+  searchable: !0,
+  key: "OKS",
+  source: "tog"
+}, {
+  value: "Holme-Olstrup",
+  searchable: !0,
+  key: "OL",
+  source: "tog"
+}, {
+  value: "Odense Sygehus",
+  searchable: !0,
+  key: "OSS",
+  source: "tog"
+}, {
+  value: "Outrup",
+  searchable: !0,
+  key: "OVT",
+  source: "tog"
+}, {
+  value: "Padborg",
+  searchable: !0,
+  key: "PA",
+  source: "tog"
+}, {
+  value: "Pederstrup",
+  searchable: !0,
+  key: "PDS",
+  source: "tog"
+}, {
+  value: "Vipperød",
+  searchable: !0,
+  key: "PE",
+  source: "tog"
+}, {
+  value: "Ribe",
+  searchable: !0,
+  key: "RB",
+  source: "tog"
+}, {
+  value: "Ribe Nørremark",
+  searchable: !0,
+  key: "RBN",
+  source: "tog"
+}, {
+  value: "Randers",
+  searchable: !0,
+  key: "RD",
+  source: "tog"
+}, {
+  value: "Ringe",
+  searchable: !0,
+  key: "RE",
+  source: "tog"
+}, {
+  value: "Rejsby",
+  searchable: !0,
+  key: "REJ",
+  source: "tog"
+}, {
+  value: "Rødby Færge",
+  searchable: !0,
+  key: "RF",
+  source: "tog"
+}, {
+  value: "Ringsted",
+  searchable: !0,
+  key: "RG",
+  source: "tog"
+}, {
+  value: "Sjørring",
+  searchable: !0,
+  key: "RI",
+  source: "tog"
+}, {
+  value: "Rimmen",
+  searchable: !0,
+  key: "RIM",
+  source: "tog"
+}, {
+  value: "Ringkøbing",
+  searchable: !0,
+  key: "RJ",
+  source: "tog"
+}, {
+  value: "Rødkærsbro",
+  searchable: !0,
+  key: "RK",
+  source: "tog"
+}, {
+  value: "Roskilde",
+  searchable: !0,
+  key: "RO",
+  source: "tog"
+}, {
+  value: "Roskilde Festivalplads",
+  searchable: !0,
+  key: "ROF",
+  source: "tog"
+}, {
+  value: "Rødekro",
+  searchable: !0,
+  key: "RQ",
+  source: "tog"
+}, {
+  value: "Regstrup",
+  searchable: !0,
+  key: "RT",
+  source: "tog"
+}, {
+  value: "Rungsted Kyst",
+  searchable: !0,
+  key: "RU",
+  source: "tog"
+}, {
+  value: "Rudme",
+  searchable: !0,
+  key: "RUS",
+  source: "tog"
+}, {
+  value: "Ry",
+  searchable: !0,
+  key: "RY",
+  source: "tog"
+}, {
+  value: "Sindal",
+  searchable: !0,
+  key: "SA",
+  source: "tog"
+}, {
+  value: "Skalbjerg",
+  searchable: !0,
+  key: "SC",
+  source: "tog"
+}, {
+  value: "Skanderborg",
+  searchable: !0,
+  key: "SD",
+  source: "tog"
+}, {
+  value: "Sønderborg",
+  searchable: !0,
+  key: "SDB",
+  source: "tog"
+}, {
+  value: "Svebølle",
+  searchable: !0,
+  key: "SE",
+  source: "tog"
+}, {
+  value: "Sejstrup",
+  searchable: !0,
+  key: "SEJ",
+  source: "tog"
+}, {
+  value: "Slagelse",
+  searchable: !0,
+  key: "SG",
+  source: "tog"
+}, {
+  value: "Skagen",
+  searchable: !0,
+  key: "SGB",
+  source: "tog"
+}, {
+  value: "Stenstrup Syd",
+  searchable: !0,
+  key: "SIS",
+  source: "tog"
+}, {
+  value: "Skjern",
+  searchable: !0,
+  key: "SJ",
+  source: "tog"
+}, {
+  value: "Skive",
+  searchable: !0,
+  key: "SK",
+  source: "tog"
+}, {
+  value: "Silkeborg",
+  searchable: !0,
+  key: "SL",
+  source: "tog"
+}, {
+  value: "Stoholm",
+  searchable: !0,
+  key: "SM",
+  source: "tog"
+}, {
+  value: "Svenstrup J",
+  searchable: !0,
+  key: "SN",
+  source: "tog"
+}, {
+  value: "Snedsted",
+  searchable: !0,
+  key: "SNE",
+  source: "tog"
+}, {
+  value: "Sorø",
+  searchable: !0,
+  key: "SO",
+  source: "tog"
+}, {
+  value: "Sparkær",
+  searchable: !0,
+  key: "SP",
+  source: "tog"
+}, {
+  value: "Snekkersten",
+  searchable: !0,
+  key: "SQ",
+  source: "tog"
+}, {
+  value: "Støvring",
+  searchable: !0,
+  key: "SR",
+  source: "tog"
+}, {
+  value: "Strandby",
+  searchable: !0,
+  key: "STB",
+  source: "tog"
+}, {
+  value: "Struer",
+  searchable: !0,
+  key: "STR",
+  source: "tog"
+}, {
+  value: "Stenstrup",
+  searchable: !0,
+  key: "STS",
+  source: "tog"
+}, {
+  value: "Studsgård",
+  searchable: !0,
+  key: "STU",
+  source: "tog"
+}, {
+  value: "Svejbæk",
+  searchable: !0,
+  key: "SV",
+  source: "tog"
+}, {
+  value: "Svendborg",
+  searchable: !0,
+  key: "SVG",
+  source: "tog"
+}, {
+  value: "Svendborg Vest",
+  searchable: !0,
+  key: "SVV",
+  source: "tog"
+}, {
+  value: "Skørping",
+  searchable: !0,
+  key: "SØ",
+  source: "tog"
+}, {
+  value: "Skodsborg",
+  searchable: !0,
+  key: "SÅ",
+  source: "tog"
+}, {
+  value: "Tarm",
+  searchable: !0,
+  key: "TA",
+  source: "tog"
+}, {
+  value: "Tjæreborg",
+  searchable: !0,
+  key: "TB",
+  source: "tog"
+}, {
+  value: "Troldhede",
+  searchable: !0,
+  key: "TD",
+  source: "tog"
+}, {
+  value: "Tønder",
+  searchable: !0,
+  key: "TDR",
+  source: "tog"
+}, {
+  value: "Tinglev",
+  searchable: !0,
+  key: "TE",
+  source: "tog"
+}, {
+  value: "Teglgårdsvej",
+  searchable: !0,
+  key: "TGV",
+  source: "tog"
+}, {
+  value: "Tureby",
+  searchable: !0,
+  key: "TH",
+  source: "tog"
+}, {
+  value: "Thisted",
+  searchable: !0,
+  key: "TI",
+  source: "tog"
+}, {
+  value: "Taulov",
+  searchable: !0,
+  key: "TL",
+  source: "tog"
+}, {
+  value: "Tim",
+  searchable: !0,
+  key: "TM",
+  source: "tog"
+}, {
+  value: "Tornby",
+  searchable: !0,
+  key: "TNB",
+  source: "tog"
+}, {
+  value: "Tolne",
+  searchable: !0,
+  key: "TO",
+  source: "tog"
+}, {
+  value: "Tommerup",
+  searchable: !0,
+  key: "TP",
+  source: "tog"
+}, {
+  value: "Tistrup",
+  searchable: !0,
+  key: "TR",
+  source: "tog"
+}, {
+  value: "Trekroner",
+  searchable: !0,
+  key: "TRK",
+  source: "tog"
+}, {
+  value: "Tønder Nord",
+  searchable: !0,
+  key: "TRN",
+  source: "tog"
+}, {
+  value: "Thyregod",
+  searchable: !0,
+  key: "TY",
+  source: "tog"
+}, {
+  value: "Tølløse",
+  searchable: !0,
+  key: "TØ",
+  source: "tog"
+}, {
+  value: "Tårnby",
+  searchable: !0,
+  key: "TÅT",
+  source: "tog"
+}, {
+  value: "Ulfborg",
+  searchable: !0,
+  key: "UF",
+  source: "tog"
+}, {
+  value: "Uglev",
+  searchable: !0,
+  key: "UL",
+  source: "tog"
+}, {
+  value: "Humlum",
+  searchable: !0,
+  key: "UM",
+  source: "tog"
+}, {
+  value: "Ulstrup",
+  searchable: !0,
+  key: "UP",
+  source: "tog"
+}, {
+  value: "Hurup Thy",
+  searchable: !0,
+  key: "UR",
+  source: "tog"
+}, {
+  value: "Aulum",
+  searchable: !0,
+  key: "UU",
+  source: "tog"
+}, {
+  value: "Varde",
+  searchable: !0,
+  key: "VA",
+  source: "tog"
+}, {
+  value: "Valby",
+  searchable: !0,
+  key: "VAL",
+  source: "tog"
+}, {
+  value: "Varde Vest",
+  searchable: !0,
+  key: "VAV",
+  source: "tog"
+}, {
+  value: "Vedbæk",
+  searchable: !0,
+  key: "VB",
+  source: "tog"
+}, {
+  value: "Hviding",
+  searchable: !0,
+  key: "VD",
+  source: "tog"
+}, {
+  value: "Vemb",
+  searchable: !0,
+  key: "VEM",
+  source: "tog"
+}, {
+  value: "Viborg",
+  searchable: !0,
+  key: "VG",
+  source: "tog"
+}, {
+  value: "Viby Jylland",
+  searchable: !0,
+  key: "VI",
+  source: "tog"
+}, {
+  value: "Vidstrup",
+  searchable: !0,
+  key: "VID",
+  source: "tog"
+}, {
+  value: "Visby",
+  searchable: !0,
+  key: "VIS",
+  source: "tog"
+}, {
+  value: "Vejle",
+  searchable: !0,
+  key: "VJ",
+  source: "tog"
+}, {
+  value: "Vejle Sygehus",
+  searchable: !0,
+  key: "VJS",
+  source: "tog"
+}, {
+  value: "Varde kaserne",
+  searchable: !0,
+  key: "VKA",
+  source: "tog"
+}, {
+  value: "Vellingshøj",
+  searchable: !0,
+  key: "VLH",
+  source: "tog"
+}, {
+  value: "Vamdrup",
+  searchable: !0,
+  key: "VM",
+  source: "tog"
+}, {
+  value: "Vejen",
+  searchable: !0,
+  key: "VN",
+  source: "tog"
+}, {
+  value: "Varde Nord",
+  searchable: !0,
+  key: "VNO",
+  source: "tog"
+}, {
+  value: "Vordingborg",
+  searchable: !0,
+  key: "VO",
+  source: "tog"
+}, {
+  value: "Vinderup",
+  searchable: !0,
+  key: "VP",
+  source: "tog"
+}, {
+  value: "Vrå",
+  searchable: !0,
+  key: "VR",
+  source: "tog"
+}, {
+  value: "Vrøgum",
+  searchable: !0,
+  key: "VRØ",
+  source: "tog"
+}, {
+  value: "Viby Sj",
+  searchable: !0,
+  key: "VY",
+  source: "tog"
+}, {
+  value: "Ydby",
+  searchable: !0,
+  key: "YD",
+  source: "tog"
+}, {
+  value: "Skærbæk",
+  searchable: !0,
+  key: "ÆK",
+  source: "tog"
+}, {
+  value: "Ølgod",
+  searchable: !0,
+  key: "ØG",
+  source: "tog"
+}, {
+  value: "Ølby",
+  searchable: !0,
+  key: "ØLB",
+  source: "tog"
+}, {
+  value: "Ørestad",
+  searchable: !0,
+  key: "ØRE",
+  source: "tog"
+}, {
+  value: "Ålbæk",
+  searchable: !0,
+  key: "ÅLB",
+  source: "tog"
+}, {
+  value: "Årslev",
+  searchable: !0,
+  key: "ÅS",
+  source: "tog"
+}, {
+  value: "Amstrup",
+  searchable: !1,
+  key: "AMT",
+  source: "tog"
+}, {
+  value: "Armose",
+  searchable: !1,
+  key: "ARM",
+  source: "tog"
+}, {
+  value: "Asnæs",
+  searchable: !1,
+  key: "ASN",
+  source: "tog"
+}, {
+  value: "Assedrup",
+  searchable: !1,
+  key: "ASS",
+  source: "tog"
+}, {
+  value: "Avnede",
+  searchable: !1,
+  key: "AVD",
+  source: "tog"
+}, {
+  value: "Skolebakken",
+  searchable: !1,
+  key: "BAK",
+  source: "tog"
+}, {
+  value: "Balleby",
+  searchable: !1,
+  key: "BAT",
+  source: "tog"
+}, {
+  value: "Beder",
+  searchable: !1,
+  key: "BED",
+  source: "tog"
+}, {
+  value: "Bækmarksbro",
+  searchable: !1,
+  key: "BKM",
+  source: "tog"
+}, {
+  value: "Bagmarken",
+  searchable: !1,
+  key: "BMT",
+  source: "tog"
+}, {
+  value: "Bonnet",
+  searchable: !1,
+  key: "BNT",
+  source: "tog"
+}, {
+  value: "Brede",
+  searchable: !1,
+  key: "BRE",
+  source: "tog"
+}, {
+  value: "Brødeskov",
+  searchable: !1,
+  key: "BSK",
+  source: "tog"
+}, {
+  value: "Dianalund",
+  searchable: !1,
+  key: "DIA",
+  source: "tog"
+}, {
+  value: "Dronningmølle",
+  searchable: !1,
+  key: "DRM",
+  source: "tog"
+}, {
+  value: "Dyssekilde",
+  searchable: !1,
+  key: "DSK",
+  source: "tog"
+}, {
+  value: "Duemose",
+  searchable: !1,
+  key: "DUG",
+  source: "tog"
+}, {
+  value: "Egelund",
+  searchable: !1,
+  key: "EG",
+  source: "tog"
+}, {
+  value: "Egøje",
+  searchable: !1,
+  key: "EGØ",
+  source: "tog"
+}, {
+  value: "Elkærdam",
+  searchable: !1,
+  key: "EL",
+  source: "tog"
+}, {
+  value: "Europaplads",
+  searchable: !1,
+  key: "EU",
+  source: "tog"
+}, {
+  value: "Fredensborg",
+  searchable: !1,
+  key: "FD",
+  source: "tog"
+}, {
+  value: "Fuglevad",
+  searchable: !1,
+  key: "FGV",
+  source: "tog"
+}, {
+  value: "Firhøj",
+  searchable: !1,
+  key: "FIR",
+  source: "tog"
+}, {
+  value: "Fjellenstrup",
+  searchable: !1,
+  key: "FJG",
+  source: "tog"
+}, {
+  value: "Fåre",
+  searchable: !1,
+  key: "FRE",
+  source: "tog"
+}, {
+  value: "Frederiksværk",
+  searchable: !1,
+  key: "FRV",
+  source: "tog"
+}, {
+  value: "Fårevejle",
+  searchable: !1,
+  key: "FVJ",
+  source: "tog"
+}, {
+  value: "Faxe Ladeplads",
+  searchable: !1,
+  key: "FXL",
+  source: "tog"
+}, {
+  value: "Faxe Syd",
+  searchable: !1,
+  key: "FXS",
+  source: "tog"
+}, {
+  value: "Gunnar Clausensvej",
+  searchable: !1,
+  key: "GCT",
+  source: "tog"
+}, {
+  value: "Godhavn",
+  searchable: !1,
+  key: "GHG",
+  source: "tog"
+}, {
+  value: "Gilleleje",
+  searchable: !1,
+  key: "GLL",
+  source: "tog"
+}, {
+  value: "Gilleleje Øst",
+  searchable: !1,
+  key: "GLØ",
+  source: "tog"
+}, {
+  value: "Grenaa",
+  searchable: !1,
+  key: "GR",
+  source: "tog"
+}, {
+  value: "Grænge",
+  searchable: !1,
+  key: "GRG",
+  source: "tog"
+}, {
+  value: "Grubberholm",
+  searchable: !1,
+  key: "GRH",
+  source: "tog"
+}, {
+  value: "Græsted Syd",
+  searchable: !1,
+  key: "GRS",
+  source: "tog"
+}, {
+  value: "Grønholt",
+  searchable: !1,
+  key: "GRT",
+  source: "tog"
+}, {
+  value: "Grevinge",
+  searchable: !1,
+  key: "GRV",
+  source: "tog"
+}, {
+  value: "Græsted",
+  searchable: !1,
+  key: "GRÆ",
+  source: "tog"
+}, {
+  value: "Grønnehave",
+  searchable: !1,
+  key: "GRØ",
+  source: "tog"
+}, {
+  value: "Grimstrup",
+  searchable: !1,
+  key: "GSF",
+  source: "tog"
+}, {
+  value: "Gislinge",
+  searchable: !1,
+  key: "GSL",
+  source: "tog"
+}, {
+  value: "Gribsø",
+  searchable: !1,
+  key: "GØG",
+  source: "tog"
+}, {
+  value: "Gørløse",
+  searchable: !1,
+  key: "GØR",
+  source: "tog"
+}, {
+  value: "Højby Sj",
+  searchable: !1,
+  key: "HBS",
+  source: "tog"
+}, {
+  value: "Harboøre",
+  searchable: !1,
+  key: "HBØ",
+  source: "tog"
+}, {
+  value: "Havrebjerg",
+  searchable: !1,
+  key: "HEB",
+  source: "tog"
+}, {
+  value: "Hellebæk",
+  searchable: !1,
+  key: "HEL",
+  source: "tog"
+}, {
+  value: "Ny Hagested",
+  searchable: !1,
+  key: "HGT",
+  source: "tog"
+}, {
+  value: "Hanehoved",
+  searchable: !1,
+  key: "HHF",
+  source: "tog"
+}, {
+  value: "Hillerød",
+  searchable: !1,
+  key: "HI",
+  source: "tog"
+}, {
+  value: "Helsinge",
+  searchable: !1,
+  key: "HLG",
+  source: "tog"
+}, {
+  value: "Himlingøje",
+  searchable: !1,
+  key: "HMØ",
+  source: "tog"
+}, {
+  value: "Hornbæk",
+  searchable: !1,
+  key: "HNK",
+  source: "tog"
+}, {
+  value: "Holløse",
+  searchable: !1,
+  key: "HOG",
+  source: "tog"
+}, {
+  value: "Hårlev",
+  searchable: !1,
+  key: "HRL",
+  source: "tog"
+}, {
+  value: "Horneby Sand",
+  searchable: !1,
+  key: "HSA",
+  source: "tog"
+}, {
+  value: "Hesselmed",
+  searchable: !1,
+  key: "HST",
+  source: "tog"
+}, {
+  value: "Hjortshøj",
+  searchable: !1,
+  key: "HT",
+  source: "tog"
+}, {
+  value: "Hundested Havn",
+  searchable: !1,
+  key: "HUH",
+  source: "tog"
+}, {
+  value: "Hundested",
+  searchable: !1,
+  key: "HUN",
+  source: "tog"
+}, {
+  value: "Hørve",
+  searchable: !1,
+  key: "HVE",
+  source: "tog"
+}, {
+  value: "Højstrup",
+  searchable: !1,
+  key: "HØP",
+  source: "tog"
+}, {
+  value: "Karinebæk",
+  searchable: !1,
+  key: "KAB",
+  source: "tog"
+}, {
+  value: "Kirke Eskilstrup",
+  searchable: !1,
+  key: "KEK",
+  source: "tog"
+}, {
+  value: "Kagerup",
+  searchable: !1,
+  key: "KGG",
+  source: "tog"
+}, {
+  value: "Kongsvang",
+  searchable: !1,
+  key: "KGV",
+  source: "tog"
+}, {
+  value: "Kildekrog",
+  searchable: !1,
+  key: "KIL",
+  source: "tog"
+}, {
+  value: "Klinkby",
+  searchable: !1,
+  key: "KLI",
+  source: "tog"
+}, {
+  value: "Klippinge",
+  searchable: !1,
+  key: "KLP",
+  source: "tog"
+}, {
+  value: "Kolind",
+  searchable: !1,
+  key: "KO",
+  source: "tog"
+}, {
+  value: "Kratbjerg",
+  searchable: !1,
+  key: "KRB",
+  source: "tog"
+}, {
+  value: "Kregme",
+  searchable: !1,
+  key: "KRF",
+  source: "tog"
+}, {
+  value: "Karise",
+  searchable: !1,
+  key: "KRI",
+  source: "tog"
+}, {
+  value: "Kvistgård",
+  searchable: !1,
+  key: "KÅ",
+  source: "tog"
+}, {
+  value: "Løve",
+  searchable: !1,
+  key: "LE",
+  source: "tog"
+}, {
+  value: "Lille Linde",
+  searchable: !1,
+  key: "LLI",
+  source: "tog"
+}, {
+  value: "Lille Kregme",
+  searchable: !1,
+  key: "LLK",
+  source: "tog"
+}, {
+  value: "Lemvig",
+  searchable: !1,
+  key: "LMV",
+  source: "tog"
+}, {
+  value: "Lystrup",
+  searchable: !1,
+  key: "LP",
+  source: "tog"
+}, {
+  value: "Hovmarken",
+  searchable: !1,
+  key: "LPT",
+  source: "tog"
+}, {
+  value: "Langerød",
+  searchable: !1,
+  key: "LRT",
+  source: "tog"
+}, {
+  value: "Løgten",
+  searchable: !1,
+  key: "LT",
+  source: "tog"
+}, {
+  value: "Lyngby Lokal",
+  searchable: !1,
+  key: "LYL",
+  source: "tog"
+}, {
+  value: "Laugø",
+  searchable: !1,
+  key: "LØG",
+  source: "tog"
+}, {
+  value: "Malling",
+  searchable: !1,
+  key: "MAL",
+  source: "tog"
+}, {
+  value: "Marienlyst",
+  searchable: !1,
+  key: "MAR",
+  source: "tog"
+}, {
+  value: "Melby",
+  searchable: !1,
+  key: "MEL",
+  source: "tog"
+}, {
+  value: "Mårum",
+  searchable: !1,
+  key: "MMG",
+  source: "tog"
+}, {
+  value: "Mølleparken",
+  searchable: !1,
+  key: "MPK",
+  source: "tog"
+}, {
+  value: "Mørke",
+  searchable: !1,
+  key: "MR",
+  source: "tog"
+}, {
+  value: "Maribo",
+  searchable: !1,
+  key: "MRB",
+  source: "tog"
+}, {
+  value: "Mårslet",
+  searchable: !1,
+  key: "MST",
+  source: "tog"
+}, {
+  value: "Mørdrup",
+  searchable: !1,
+  key: "MØT",
+  source: "tog"
+}, {
+  value: "Mårsø",
+  searchable: !1,
+  key: "MÅ",
+  source: "tog"
+}, {
+  value: "Nr. Asmindrup",
+  searchable: !1,
+  key: "NAM",
+  source: "tog"
+}, {
+  value: "Nyled",
+  searchable: !1,
+  key: "NDT",
+  source: "tog"
+}, {
+  value: "Nejrup",
+  searchable: !1,
+  key: "NET",
+  source: "tog"
+}, {
+  value: "Nykøbing Sjælland",
+  searchable: !1,
+  key: "NKS",
+  source: "tog"
+}, {
+  value: "Nakskov",
+  searchable: !1,
+  key: "NSK",
+  source: "tog"
+}, {
+  value: "Nyrup",
+  searchable: !1,
+  key: "NYP",
+  source: "tog"
+}, {
+  value: "Nærum",
+  searchable: !1,
+  key: "NÆR",
+  source: "tog"
+}, {
+  value: "Nørgårdsvej",
+  searchable: !1,
+  key: "NØV",
+  source: "tog"
+}, {
+  value: "Odder",
+  searchable: !1,
+  key: "ODD",
+  source: "tog"
+}, {
+  value: "Hornslet",
+  searchable: !1,
+  key: "OS",
+  source: "tog"
+}, {
+  value: "Den Permanente",
+  searchable: !1,
+  key: "PER",
+  source: "tog"
+}, {
+  value: "Pårup",
+  searchable: !1,
+  key: "PPG",
+  source: "tog"
+}, {
+  value: "Parkvej",
+  searchable: !1,
+  key: "PV",
+  source: "tog"
+}, {
+  value: "Ramme",
+  searchable: !1,
+  key: "RAM",
+  source: "tog"
+}, {
+  value: "Rødvig",
+  searchable: !1,
+  key: "RDG",
+  source: "tog"
+}, {
+  value: "Rosenhøj",
+  searchable: !1,
+  key: "RH",
+  source: "tog"
+}, {
+  value: "Rude Havvej",
+  searchable: !1,
+  key: "RUH",
+  source: "tog"
+}, {
+  value: "Ruds Vedby",
+  searchable: !1,
+  key: "RUV",
+  source: "tog"
+}, {
+  value: "Ravnholm",
+  searchable: !1,
+  key: "RVH",
+  source: "tog"
+}, {
+  value: "Ryde",
+  searchable: !1,
+  key: "RYD",
+  source: "tog"
+}, {
+  value: "Rønland",
+  searchable: !1,
+  key: "RØN",
+  source: "tog"
+}, {
+  value: "Ryomgård",
+  searchable: !1,
+  key: "RÅ",
+  source: "tog"
+}, {
+  value: "Saltrup",
+  searchable: !1,
+  key: "SAG",
+  source: "tog"
+}, {
+  value: "Saunte",
+  searchable: !1,
+  key: "SAU",
+  source: "tog"
+}, {
+  value: "Sønderby",
+  searchable: !1,
+  key: "SDBY",
+  source: "tog"
+}, {
+  value: "Stenhus",
+  searchable: !1,
+  key: "SHT",
+  source: "tog"
+}, {
+  value: "Sinkbæk",
+  searchable: !1,
+  key: "SIT",
+  source: "tog"
+}, {
+  value: "Skibstrup",
+  searchable: !1,
+  key: "SKB",
+  source: "tog"
+}, {
+  value: "Skellebjerg",
+  searchable: !1,
+  key: "SKL",
+  source: "tog"
+}, {
+  value: "Skævinge",
+  searchable: !1,
+  key: "SKV",
+  source: "tog"
+}, {
+  value: "Sommerland Sjælland",
+  searchable: !1,
+  key: "SLT",
+  source: "tog"
+}, {
+  value: "Store-Merløse",
+  searchable: !1,
+  key: "SMS",
+  source: "tog"
+}, {
+  value: "Svinninge",
+  searchable: !1,
+  key: "SNG",
+  source: "tog"
+}, {
+  value: "Slotspavillonen",
+  searchable: !1,
+  key: "SPG",
+  source: "tog"
+}, {
+  value: "Strande",
+  searchable: !1,
+  key: "STA",
+  source: "tog"
+}, {
+  value: "Store-Heddinge",
+  searchable: !1,
+  key: "STH",
+  source: "tog"
+}, {
+  value: "Stenlille",
+  searchable: !1,
+  key: "STL",
+  source: "tog"
+}, {
+  value: "Stæremosen",
+  searchable: !1,
+  key: "STÆ",
+  source: "tog"
+}, {
+  value: "Sakskøbing",
+  searchable: !1,
+  key: "SX",
+  source: "tog"
+}, {
+  value: "Søborg",
+  searchable: !1,
+  key: "SØB",
+  source: "tog"
+}, {
+  value: "Søllested",
+  searchable: !1,
+  key: "SØL",
+  source: "tog"
+}, {
+  value: "Tønder Grænse",
+  searchable: !1,
+  key: "TDGR",
+  source: "tog"
+}, {
+  value: "Thyborøn Havn",
+  searchable: !1,
+  key: "THB",
+  source: "tog"
+}, {
+  value: "Sprogøvej",
+  searchable: !1,
+  key: "THS",
+  source: "tog"
+}, {
+  value: "Thyborøn Kirke",
+  searchable: !1,
+  key: "THT",
+  source: "tog"
+}, {
+  value: "Tokkerup",
+  searchable: !1,
+  key: "TOK",
+  source: "tog"
+}, {
+  value: "Torsøvej",
+  searchable: !1,
+  key: "TOV",
+  source: "tog"
+}, {
+  value: "Tranbjerg",
+  searchable: !1,
+  key: "TRG",
+  source: "tog"
+}, {
+  value: "Trustrup",
+  searchable: !1,
+  key: "TU",
+  source: "tog"
+}, {
+  value: "Tisvildeleje",
+  searchable: !1,
+  key: "TVL",
+  source: "tog"
+}, {
+  value: "Tårnby",
+  searchable: !1,
+  key: "TÅT",
+  source: "tog"
+}, {
+  value: "Varpelev",
+  searchable: !1,
+  key: "VAP",
+  source: "tog"
+}, {
+  value: "Vedde",
+  searchable: !1,
+  key: "VED",
+  source: "tog"
+}, {
+  value: "Vejby",
+  searchable: !1,
+  key: "VEJ",
+  source: "tog"
+}, {
+  value: "Vilhelmsborg",
+  searchable: !1,
+  key: "VH",
+  source: "tog"
+}, {
+  value: "Victoria Street Station",
+  searchable: !1,
+  key: "VIC",
+  source: "tog"
+}, {
+  value: "Vibehus",
+  searchable: !1,
+  key: "VIF",
+  source: "tog"
+}, {
+  value: "Vig",
+  searchable: !1,
+  key: "VIG",
+  source: "tog"
+}, {
+  value: "Vallø",
+  searchable: !1,
+  key: "VLØ",
+  source: "tog"
+}, {
+  value: "Vrist",
+  searchable: !1,
+  key: "VRI",
+  source: "tog"
+}, {
+  value: "Vestre Strandalle",
+  searchable: !1,
+  key: "VSA",
+  source: "tog"
+}, {
+  value: "Ørby",
+  searchable: !1,
+  key: "ØBG",
+  source: "tog"
+}, {
+  value: "Skødstrup",
+  searchable: !1,
+  key: "ØDS",
+  source: "tog"
+}, {
+  value: "Øllegårdsvej",
+  searchable: !1,
+  key: "ØGT",
+  source: "tog"
+}, {
+  value: "Ølsted",
+  searchable: !1,
+  key: "ØLS",
+  source: "tog"
+}, {
+  value: "Høng",
+  searchable: !1,
+  key: "ØN",
+  source: "tog"
+}, {
+  value: "Ørestad",
+  searchable: !1,
+  key: "ØRE",
+  source: "tog"
+}, {
+  value: "Ørholm",
+  searchable: !1,
+  key: "ØRH",
+  source: "tog"
+}, {
+  value: "Østbanetorvet",
+  searchable: !1,
+  key: "ØS",
+  source: "tog"
+}, {
+  value: "Østerbjerg",
+  searchable: !1,
+  key: "ØSF",
+  source: "tog"
+}, {
+  value: "Øster Toreby",
+  searchable: !1,
+  key: "ØTO",
+  source: "tog"
+}, {
+  value: "Ålsgårde",
+  searchable: !1,
+  key: "AAL",
+  source: "tog"
+}, {
+  value: "Agnesberg",
+  searchable: !1,
+  key: "%AGB",
+  source: "tog"
+}, {
+  value: "Aleholm",
+  searchable: !1,
+  key: "%AHM",
+  source: "tog"
+}, {
+  value: "Algutsgården",
+  searchable: !1,
+  key: "%AGG",
+  source: "tog"
+}, {
+  value: "Alingsås",
+  searchable: !1,
+  key: "%A",
+  source: "tog"
+}, {
+  value: "Almedal",
+  searchable: !1,
+  key: "%AM",
+  source: "tog"
+}, {
+  value: "Alnabru",
+  searchable: !1,
+  key: "%ALN",
+  source: "tog"
+}, {
+  value: "Alvesta",
+  searchable: !1,
+  key: "%AV",
+  source: "tog"
+}, {
+  value: "Alvhem",
+  searchable: !1,
+  key: "%ALH",
+  source: "tog"
+}, {
+  value: "Aneby",
+  searchable: !1,
+  key: "%ANY",
+  source: "tog"
+}, {
+  value: "Anneberg",
+  searchable: !1,
+  key: "%AG",
+  source: "tog"
+}, {
+  value: "Annedal",
+  searchable: !1,
+  key: "%AAL",
+  source: "tog"
+}, {
+  value: "Aplared",
+  searchable: !1,
+  key: "%APD",
+  source: "tog"
+}, {
+  value: "Arboga",
+  searchable: !1,
+  key: "%ARB",
+  source: "tog"
+}, {
+  value: "Arlöv",
+  searchable: !1,
+  key: "%AL",
+  source: "tog"
+}, {
+  value: "Aspedalen",
+  searchable: !1,
+  key: "%ASD",
+  source: "tog"
+}, {
+  value: "Aspen",
+  searchable: !1,
+  key: "%APN",
+  source: "tog"
+}, {
+  value: "Assberg",
+  searchable: !1,
+  key: "%ASB",
+  source: "tog"
+}, {
+  value: "Attarp",
+  searchable: !1,
+  key: "%ATP",
+  source: "tog"
+}, {
+  value: "Ballingslöv",
+  searchable: !1,
+  key: "%BL",
+  source: "tog"
+}, {
+  value: "Bankeryd",
+  searchable: !1,
+  key: "%BRY",
+  source: "tog"
+}, {
+  value: "Barkåkra",
+  searchable: !1,
+  key: "%BAA",
+  source: "tog"
+}, {
+  value: "Berga",
+  searchable: !1,
+  key: "%BG",
+  source: "tog"
+}, {
+  value: "Berghem",
+  searchable: !1,
+  key: "%BGM",
+  source: "tog"
+}, {
+  value: "Bergåsa",
+  searchable: !1,
+  key: "%BÅA",
+  source: "tog"
+}, {
+  value: "Billeberga",
+  searchable: !1,
+  key: "%BIB",
+  source: "tog"
+}, {
+  value: "Billesholm",
+  searchable: !1,
+  key: "%BIH",
+  source: "tog"
+}, {
+  value: "Biskopstorp",
+  searchable: !1,
+  key: "%BTP",
+  source: "tog"
+}, {
+  value: "Bjurhem",
+  searchable: !1,
+  key: "%BJH",
+  source: "tog"
+}, {
+  value: "Bjuv",
+  searchable: !1,
+  key: "%BJUV",
+  source: "tog"
+}, {
+  value: "Bjärnum",
+  searchable: !1,
+  key: "%BJM",
+  source: "tog"
+}, {
+  value: "Björketorp",
+  searchable: !1,
+  key: "%BJO",
+  source: "tog"
+}, {
+  value: "Björköby",
+  searchable: !1,
+  key: "%BJY",
+  source: "tog"
+}, {
+  value: "Björnkulla",
+  searchable: !1,
+  key: "%BJN",
+  source: "tog"
+}, {
+  value: "Björnlunda",
+  searchable: !1,
+  key: "%B",
+  source: "tog"
+}, {
+  value: "Blädinge",
+  searchable: !1,
+  key: "%BLD",
+  source: "tog"
+}, {
+  value: "Bodafors",
+  searchable: !1,
+  key: "%BDF",
+  source: "tog"
+}, {
+  value: "Bohus",
+  searchable: !1,
+  key: "%BHS",
+  source: "tog"
+}, {
+  value: "Bollebygd",
+  searchable: !1,
+  key: "%BOY",
+  source: "tog"
+}, {
+  value: "Bor",
+  searchable: !1,
+  key: "%BOR",
+  source: "tog"
+}, {
+  value: "Borgstena",
+  searchable: !1,
+  key: "%BOA",
+  source: "tog"
+}, {
+  value: "Borås C",
+  searchable: !1,
+  key: "%BS",
+  source: "tog"
+}, {
+  value: "Boxholm",
+  searchable: !1,
+  key: "%BX",
+  source: "tog"
+}, {
+  value: "Bratteborg",
+  searchable: !1,
+  key: "%BTG",
+  source: "tog"
+}, {
+  value: "Bredaryd",
+  searchable: !1,
+  key: "%BDY",
+  source: "tog"
+}, {
+  value: "Brinellskolan",
+  searchable: !1,
+  key: "%BRIN",
+  source: "tog"
+}, {
+  value: "Brogården",
+  searchable: !1,
+  key: "%BGD",
+  source: "tog"
+}, {
+  value: "Bromölla",
+  searchable: !1,
+  key: "%BML",
+  source: "tog"
+}, {
+  value: "Bruzaholm",
+  searchable: !1,
+  key: "%BZ",
+  source: "tog"
+}, {
+  value: "Bryngenäs",
+  searchable: !1,
+  key: "%BGS",
+  source: "tog"
+}, {
+  value: "Bräkne-Hoby",
+  searchable: !1,
+  key: "%BHB",
+  source: "tog"
+}, {
+  value: "Brännarp",
+  searchable: !1,
+  key: "%BP",
+  source: "tog"
+}, {
+  value: "Bränninge",
+  searchable: !1,
+  key: "%BRE",
+  source: "tog"
+}, {
+  value: "Brännögård",
+  searchable: !1,
+  key: "%BÖG",
+  source: "tog"
+}, {
+  value: "Brålanda",
+  searchable: !1,
+  key: "%BRL",
+  source: "tog"
+}, {
+  value: "Burlöv",
+  searchable: !1,
+  key: "%BLV",
+  source: "tog"
+}, {
+  value: "Byarum",
+  searchable: !1,
+  key: "%BYM",
+  source: "tog"
+}, {
+  value: "Bäckefors",
+  searchable: !1,
+  key: "%BÄF",
+  source: "tog"
+}, {
+  value: "Båstad",
+  searchable: !1,
+  key: "%BÅN",
+  source: "tog"
+}, {
+  value: "Båstad",
+  searchable: !1,
+  key: "%BÅSÖ",
+  source: "tog"
+}, {
+  value: "Dals Rostock",
+  searchable: !1,
+  key: "%DRT",
+  source: "tog"
+}, {
+  value: "Dammstorp",
+  searchable: !1,
+  key: "%DAT",
+  source: "tog"
+}, {
+  value: "Degerön",
+  searchable: !1,
+  key: "%D",
+  source: "tog"
+}, {
+  value: "Derome",
+  searchable: !1,
+  key: "%DRE",
+  source: "tog"
+}, {
+  value: "Dingle",
+  searchable: !1,
+  key: "%DL",
+  source: "tog"
+}, {
+  value: "Diö",
+  searchable: !1,
+  key: "%DIÖ",
+  source: "tog"
+}, {
+  value: "Diö Södra",
+  searchable: !1,
+  key: "%DIS",
+  source: "tog"
+}, {
+  value: "Dkebokvarn",
+  searchable: !1,
+  key: "%SKV",
+  source: "tog"
+}, {
+  value: "Dösjebro",
+  searchable: !1,
+  key: "%DÖS",
+  source: "tog"
+}, {
+  value: "Dånviken",
+  searchable: !1,
+  key: "%DÅN",
+  source: "tog"
+}, {
+  value: "Ed",
+  searchable: !1,
+  key: "%ED",
+  source: "tog"
+}, {
+  value: "Ekenässjön",
+  searchable: !1,
+  key: "%ESN",
+  source: "tog"
+}, {
+  value: "Ekeryd",
+  searchable: !1,
+  key: "%EKY",
+  source: "tog"
+}, {
+  value: "Eksjö",
+  searchable: !1,
+  key: "%EK",
+  source: "tog"
+}, {
+  value: "Eldsberga",
+  searchable: !1,
+  key: "%EA",
+  source: "tog"
+}, {
+  value: "Emmaboda",
+  searchable: !1,
+  key: "%EM",
+  source: "tog"
+}, {
+  value: "Eneryda",
+  searchable: !1,
+  key: "%ERA",
+  source: "tog"
+}, {
+  value: "Erikstad",
+  searchable: !1,
+  key: "%ERK",
+  source: "tog"
+}, {
+  value: "Eslöv",
+  searchable: !1,
+  key: "%E",
+  source: "tog"
+}, {
+  value: "Falkenberg",
+  searchable: !1,
+  key: "%FABP",
+  source: "tog"
+}, {
+  value: "Falköping C",
+  searchable: !1,
+  key: "%F",
+  source: "tog"
+}, {
+  value: "Finja",
+  searchable: !1,
+  key: "%FIN",
+  source: "tog"
+}, {
+  value: "Finnerödja",
+  searchable: !1,
+  key: "%FA",
+  source: "tog"
+}, {
+  value: "Fiskeby",
+  searchable: !1,
+  key: "%FI",
+  source: "tog"
+}, {
+  value: "Fjälkinge",
+  searchable: !1,
+  key: "%FKI",
+  source: "tog"
+}, {
+  value: "Flackarp",
+  searchable: !1,
+  key: "%FLP",
+  source: "tog"
+}, {
+  value: "Flemingsberg",
+  searchable: !1,
+  key: "%FLB",
+  source: "tog"
+}, {
+  value: "Flen",
+  searchable: !1,
+  key: "%FLE",
+  source: "tog"
+}, {
+  value: "Flens övre",
+  searchable: !1,
+  key: "%FSÖ",
+  source: "tog"
+}, {
+  value: "Flisby",
+  searchable: !1,
+  key: "%FLS",
+  source: "tog"
+}, {
+  value: "Floby",
+  searchable: !1,
+  key: "%FBY",
+  source: "tog"
+}, {
+  value: "Floda",
+  searchable: !1,
+  key: "%FD",
+  source: "tog"
+}, {
+  value: "Flodala",
+  searchable: !1,
+  key: "%FAA",
+  source: "tog"
+}, {
+  value: "Flunbo",
+  searchable: !1,
+  key: "%FLU",
+  source: "tog"
+}, {
+  value: "Flädie",
+  searchable: !1,
+  key: "%FL",
+  source: "tog"
+}, {
+  value: "Forserum",
+  searchable: !1,
+  key: "%FM",
+  source: "tog"
+}, {
+  value: "Forsheda",
+  searchable: !1,
+  key: "%FOD",
+  source: "tog"
+}, {
+  value: "Fosieby",
+  searchable: !1,
+  key: "%FSB",
+  source: "tog"
+}, {
+  value: "Fredriksdal",
+  searchable: !1,
+  key: "%FDL",
+  source: "tog"
+}, {
+  value: "Fredrikslund",
+  searchable: !1,
+  key: "%FRE",
+  source: "tog"
+}, {
+  value: "Frillesås",
+  searchable: !1,
+  key: "%FÅ",
+  source: "tog"
+}, {
+  value: "Frinnaryd",
+  searchable: !1,
+  key: "%FRD",
+  source: "tog"
+}, {
+  value: "Fristad",
+  searchable: !1,
+  key: "%FRA",
+  source: "tog"
+}, {
+  value: "Fritsla",
+  searchable: !1,
+  key: "%FRL",
+  source: "tog"
+}, {
+  value: "Frufällan",
+  searchable: !1,
+  key: "%FFL",
+  source: "tog"
+}, {
+  value: "Frufällan",
+  searchable: !1,
+  key: "%FLF",
+  source: "tog"
+}, {
+  value: "Frändefors",
+  searchable: !1,
+  key: "%FDF",
+  source: "tog"
+}, {
+  value: "Furet",
+  searchable: !1,
+  key: "%FUR",
+  source: "tog"
+}, {
+  value: "Förslöv",
+  searchable: !1,
+  key: "%FÖR",
+  source: "tog"
+}, {
+  value: "Fågelsta",
+  searchable: !1,
+  key: "%FGL",
+  source: "tog"
+}, {
+  value: "Fållinge",
+  searchable: !1,
+  key: "%FÅL",
+  source: "tog"
+}, {
+  value: "Gamlarp",
+  searchable: !1,
+  key: "%GMP",
+  source: "tog"
+}, {
+  value: "Gamlestade",
+  searchable: !1,
+  key: "%GAS",
+  source: "tog"
+}, {
+  value: "Gantofta",
+  searchable: !1,
+  key: "%GAN",
+  source: "tog"
+}, {
+  value: "Garnudden",
+  searchable: !1,
+  key: "%GAU",
+  source: "tog"
+}, {
+  value: "Gemla",
+  searchable: !1,
+  key: "%GM",
+  source: "tog"
+}, {
+  value: "Genevad",
+  searchable: !1,
+  key: "%GND",
+  source: "tog"
+}, {
+  value: "Gistad",
+  searchable: !1,
+  key: "%GI",
+  source: "tog"
+}, {
+  value: "Glumslöv",
+  searchable: !1,
+  key: "%GLV",
+  source: "tog"
+}, {
+  value: "Gnesta",
+  searchable: !1,
+  key: "%GN",
+  source: "tog"
+}, {
+  value: "Gnosjö",
+  searchable: !1,
+  key: "%GNÖ",
+  source: "tog"
+}, {
+  value: "Godegård",
+  searchable: !1,
+  key: "%GO",
+  source: "tog"
+}, {
+  value: "Grevaryd",
+  searchable: !1,
+  key: "%GRD",
+  source: "tog"
+}, {
+  value: "Grevie",
+  searchable: !1,
+  key: "%GVE",
+  source: "tog"
+}, {
+  value: "Grimstorp",
+  searchable: !1,
+  key: "%GT",
+  source: "tog"
+}, {
+  value: "Grimsås",
+  searchable: !1,
+  key: "%GRM",
+  source: "tog"
+}, {
+  value: "Gripenberg",
+  searchable: !1,
+  key: "%GP",
+  source: "tog"
+}, {
+  value: "Grästorp",
+  searchable: !1,
+  key: "%GOP",
+  source: "tog"
+}, {
+  value: "Gubbero",
+  searchable: !1,
+  key: "%GRO",
+  source: "tog"
+}, {
+  value: "Gullberna",
+  searchable: !1,
+  key: "%GUA",
+  source: "tog"
+}, {
+  value: "Gunnesbo",
+  searchable: !1,
+  key: "%GNB",
+  source: "tog"
+}, {
+  value: "Gärsnäs",
+  searchable: !1,
+  key: "%GSS",
+  source: "tog"
+}, {
+  value: "Gävle",
+  searchable: !1,
+  key: "%GÄV",
+  source: "tog"
+}, {
+  value: "Göteborg",
+  searchable: !1,
+  key: "%G",
+  source: "tog"
+}, {
+  value: "Göteborg",
+  searchable: !1,
+  key: "%G_",
+  source: "tog"
+}, {
+  value: "Göteborg Kville",
+  searchable: !1,
+  key: "%GK",
+  source: "tog"
+}, {
+  value: "Göteborg Marieholm",
+  searchable: !1,
+  key: "%GBM",
+  source: "tog"
+}, {
+  value: "Göteborg Sävenäs",
+  searchable: !1,
+  key: "%GSV",
+  source: "tog"
+}, {
+  value: "Gårdsjö",
+  searchable: !1,
+  key: "%GDÖ",
+  source: "tog"
+}, {
+  value: "Gåvetorp",
+  searchable: !1,
+  key: "%GÅP",
+  source: "tog"
+}, {
+  value: "Habo",
+  searchable: !1,
+  key: "%HO",
+  source: "tog"
+}, {
+  value: "Hagalund",
+  searchable: !1,
+  key: "%HGL",
+  source: "tog"
+}, {
+  value: "Hallavadet",
+  searchable: !1,
+  key: "%HVA",
+  source: "tog"
+}, {
+  value: "Hallsberg",
+  searchable: !1,
+  key: "%HALL",
+  source: "tog"
+}, {
+  value: "Hallsberg Pbg",
+  searchable: !1,
+  key: "%HPBG",
+  source: "tog"
+}, {
+  value: "Hallsberg Rbg",
+  searchable: !1,
+  key: "%HRBG",
+  source: "tog"
+}, {
+  value: "Hallsbergs posten",
+  searchable: !1,
+  key: "%HPN",
+  source: "tog"
+}, {
+  value: "Halmstad C",
+  searchable: !1,
+  key: "%HD",
+  source: "tog"
+}, {
+  value: "Halmstad C",
+  searchable: !1,
+  key: "%H",
+  source: "tog"
+}, {
+  value: "Halmstad Rbg",
+  searchable: !1,
+  key: "%HDR",
+  source: "tog"
+}, {
+  value: "Hamra",
+  searchable: !1,
+  key: "%HAA",
+  source: "tog"
+}, {
+  value: "Hasslarp",
+  searchable: !1,
+  key: "%HLP",
+  source: "tog"
+}, {
+  value: "Heberg",
+  searchable: !1,
+  key: "%HE",
+  source: "tog"
+}, {
+  value: "Hellevadsholm",
+  searchable: !1,
+  key: "%HLV",
+  source: "tog"
+}, {
+  value: "Helsingborg",
+  searchable: !1,
+  key: "%HB",
+  source: "tog"
+}, {
+  value: "Ramlösa",
+  searchable: !1,
+  key: "%HBGB",
+  source: "tog"
+}, {
+  value: "Ramlösa",
+  searchable: !1,
+  key: "%HBGB",
+  source: "tog"
+}, {
+  value: "Ramlösa",
+  searchable: !1,
+  key: "%HGB",
+  source: "tog"
+}, {
+  value: "Ramlösa",
+  searchable: !1,
+  key: "%HBS",
+  source: "tog"
+}, {
+  value: "Herrljunga",
+  searchable: !1,
+  key: "%HR",
+  source: "tog"
+}, {
+  value: "Herting",
+  searchable: !1,
+  key: "%HTI",
+  source: "tog"
+}, {
+  value: "Hestra",
+  searchable: !1,
+  key: "%HET",
+  source: "tog"
+}, {
+  value: "Hillared",
+  searchable: !1,
+  key: "%HIL",
+  source: "tog"
+}, {
+  value: "Hillerstorp",
+  searchable: !1,
+  key: "%HTO",
+  source: "tog"
+}, {
+  value: "Hindås",
+  searchable: !1,
+  key: "%HÅS",
+  source: "tog"
+}, {
+  value: "Hjältevad",
+  searchable: !1,
+  key: "%HVD",
+  source: "tog"
+}, {
+  value: "Hjärup",
+  searchable: !1,
+  key: "%HJP",
+  source: "tog"
+}, {
+  value: "Hok",
+  searchable: !1,
+  key: "%HOK",
+  source: "tog"
+}, {
+  value: "Hoks östra",
+  searchable: !1,
+  key: "%HOKÖ",
+  source: "tog"
+}, {
+  value: "Hollberget",
+  searchable: !1,
+  key: "%HBE",
+  source: "tog"
+}, {
+  value: "Holmsjö",
+  searchable: !1,
+  key: "%HMÖ",
+  source: "tog"
+}, {
+  value: "Horred",
+  searchable: !1,
+  key: "%HRE",
+  source: "tog"
+}, {
+  value: "Hovmantorp",
+  searchable: !1,
+  key: "%HVP",
+  source: "tog"
+}, {
+  value: "Hovslätt",
+  searchable: !1,
+  key: "%HVS",
+  source: "tog"
+}, {
+  value: "Huddinge",
+  searchable: !1,
+  key: "%HU",
+  source: "tog"
+}, {
+  value: "Hulingsryd",
+  searchable: !1,
+  key: "%HUD",
+  source: "tog"
+}, {
+  value: "Hult",
+  searchable: !1,
+  key: "%HUL",
+  source: "tog"
+}, {
+  value: "Hultsfred",
+  searchable: !1,
+  key: "%HF",
+  source: "tog"
+}, {
+  value: "Huskvarna",
+  searchable: !1,
+  key: "%HKA",
+  source: "tog"
+}, {
+  value: "Hyllie",
+  searchable: !1,
+  key: "%HIE",
+  source: "tog"
+}, {
+  value: "Hyllstofta",
+  searchable: !1,
+  key: "%HYL",
+  source: "tog"
+}, {
+  value: "Häljarp",
+  searchable: !1,
+  key: "%HÄP",
+  source: "tog"
+}, {
+  value: "Härryda",
+  searchable: !1,
+  key: "%HÄY",
+  source: "tog"
+}, {
+  value: "Hässleholm",
+  searchable: !1,
+  key: "%HM",
+  source: "tog"
+}, {
+  value: "Hästveda",
+  searchable: !1,
+  key: "%HV",
+  source: "tog"
+}, {
+  value: "Hökön",
+  searchable: !1,
+  key: "%HKÖ",
+  source: "tog"
+}, {
+  value: "Hörle",
+  searchable: !1,
+  key: "%HRL",
+  source: "tog"
+}, {
+  value: "Höör",
+  searchable: !1,
+  key: "%HÖ",
+  source: "tog"
+}, {
+  value: "Håkantorp",
+  searchable: !1,
+  key: "%HÅP",
+  source: "tog"
+}, {
+  value: "Ingatorp",
+  searchable: !1,
+  key: "%IGT",
+  source: "tog"
+}, {
+  value: "Jakobshyttan",
+  searchable: !1,
+  key: "%JHO",
+  source: "tog"
+}, {
+  value: "Jonsered Västra",
+  searchable: !1,
+  key: "%JV",
+  source: "tog"
+}, {
+  value: "Jonsered Östra",
+  searchable: !1,
+  key: "%J",
+  source: "tog"
+}, {
+  value: "Jordholmen",
+  searchable: !1,
+  key: "%JH",
+  source: "tog"
+}, {
+  value: "Järlövsby",
+  searchable: !1,
+  key: "%JÄY",
+  source: "tog"
+}, {
+  value: "Järna",
+  searchable: !1,
+  key: "%JN",
+  source: "tog"
+}, {
+  value: "Järrestad",
+  searchable: !1,
+  key: "%JST",
+  source: "tog"
+}, {
+  value: "Jönköping",
+  searchable: !1,
+  key: "%JÖ",
+  source: "tog"
+}, {
+  value: "Jönköping gbg",
+  searchable: !1,
+  key: "%JÖGB",
+  source: "tog"
+}, {
+  value: "Kalmar C",
+  searchable: !1,
+  key: "%KAC",
+  source: "tog"
+}, {
+  value: "Kalmar S",
+  searchable: !1,
+  key: "%KAS",
+  source: "tog"
+}, {
+  value: "Karlberg",
+  searchable: !1,
+  key: "%KE",
+  source: "tog"
+}, {
+  value: "Karlshamn",
+  searchable: !1,
+  key: "%KH",
+  source: "tog"
+}, {
+  value: "Karlskrona",
+  searchable: !1,
+  key: "%CK",
+  source: "tog"
+}, {
+  value: "Karpalund",
+  searchable: !1,
+  key: "%KAP",
+  source: "tog"
+}, {
+  value: "Katrineholm C",
+  searchable: !1,
+  key: "%K",
+  source: "tog"
+}, {
+  value: "Kattarp",
+  searchable: !1,
+  key: "%KA",
+  source: "tog"
+}, {
+  value: "Killeberg",
+  searchable: !1,
+  key: "%KR",
+  source: "tog"
+}, {
+  value: "Kimstad",
+  searchable: !1,
+  key: "%KMS",
+  source: "tog"
+}, {
+  value: "Kinna",
+  searchable: !1,
+  key: "%KIN",
+  source: "tog"
+}, {
+  value: "Kinnared",
+  searchable: !1,
+  key: "%KID",
+  source: "tog"
+}, {
+  value: "Kistinge",
+  searchable: !1,
+  key: "%KST",
+  source: "tog"
+}, {
+  value: "Klevshult",
+  searchable: !1,
+  key: "%KVH",
+  source: "tog"
+}, {
+  value: "Klippan",
+  searchable: !1,
+  key: "%KL",
+  source: "tog"
+}, {
+  value: "Knalleland",
+  searchable: !1,
+  key: "%KNL",
+  source: "tog"
+}, {
+  value: "Knäred",
+  searchable: !1,
+  key: "%KNÄ",
+  source: "tog"
+}, {
+  value: "Kode",
+  searchable: !1,
+  key: "%KDE",
+  source: "tog"
+}, {
+  value: "Kolke",
+  searchable: !1,
+  key: "%KOE",
+  source: "tog"
+}, {
+  value: "Komsjö-gränsen",
+  searchable: !1,
+  key: "%KO",
+  source: "tog"
+}, {
+  value: "Kragenäs",
+  searchable: !1,
+  key: "%KGS",
+  source: "tog"
+}, {
+  value: "Kristianstad",
+  searchable: !1,
+  key: "%CR",
+  source: "tog"
+}, {
+  value: "Kristianstad Gbg",
+  searchable: !1,
+  key: "%CRGB",
+  source: "tog"
+}, {
+  value: "Kristianstad Gbg",
+  searchable: !1,
+  key: "%CRBG",
+  source: "tog"
+}, {
+  value: "Kristianstad Gbg",
+  searchable: !1,
+  key: "%CRBG",
+  source: "tog"
+}, {
+  value: "Krökesbo",
+  searchable: !1,
+  key: "%KRÖB",
+  source: "tog"
+}, {
+  value: "Kungsbacka",
+  searchable: !1,
+  key: "%KB",
+  source: "tog"
+}, {
+  value: "Kungsbacka Hede",
+  searchable: !1,
+  key: "%KHE",
+  source: "tog"
+}, {
+  value: "Kvidinge",
+  searchable: !1,
+  key: "%KVI",
+  source: "tog"
+}, {
+  value: "Källeryd",
+  searchable: !1,
+  key: "%KÄ",
+  source: "tog"
+}, {
+  value: "Kärda",
+  searchable: !1,
+  key: "%KÄD",
+  source: "tog"
+}, {
+  value: "Kärreberga",
+  searchable: !1,
+  key: "%KÄB",
+  source: "tog"
+}, {
+  value: "Kävlinge",
+  searchable: !1,
+  key: "%KG",
+  source: "tog"
+}, {
+  value: "Köping",
+  searchable: !1,
+  key: "%KP",
+  source: "tog"
+}, {
+  value: "Köpingebro",
+  searchable: !1,
+  key: "%KÖ",
+  source: "tog"
+}, {
+  value: "Köpmannebro",
+  searchable: !1,
+  key: "%KPM",
+  source: "tog"
+}, {
+  value: "Kågeröd",
+  searchable: !1,
+  key: "%KD",
+  source: "tog"
+}, {
+  value: "Kållered",
+  searchable: !1,
+  key: "%KRD",
+  source: "tog"
+}, {
+  value: "Laholm",
+  searchable: !1,
+  key: "%LAOV",
+  source: "tog"
+}, {
+  value: "Lammhult",
+  searchable: !1,
+  key: "%LH",
+  source: "tog"
+}, {
+  value: "Landeryd",
+  searchable: !1,
+  key: "%LRD",
+  source: "tog"
+}, {
+  value: "Landskrona",
+  searchable: !1,
+  key: "%LKÖ",
+  source: "tog"
+}, {
+  value: "Laxå",
+  searchable: !1,
+  key: "%LÅ",
+  source: "tog"
+}, {
+  value: "Ledsgård",
+  searchable: !1,
+  key: "%LGD",
+  source: "tog"
+}, {
+  value: "Lekarekulle",
+  searchable: !1,
+  key: "%LEK",
+  source: "tog"
+}, {
+  value: "Lemmeströ",
+  searchable: !1,
+  key: "%LMM",
+  source: "tog"
+}, {
+  value: "Lernacken",
+  searchable: !1,
+  key: "%LNK",
+  source: "tog"
+}, {
+  value: "Lerum",
+  searchable: !1,
+  key: "%LR",
+  source: "tog"
+}, {
+  value: "Lessebo",
+  searchable: !1,
+  key: "%LO",
+  source: "tog"
+}, {
+  value: "Lidnäs",
+  searchable: !1,
+  key: "%LNS",
+  source: "tog"
+}, {
+  value: "Lillaryd",
+  searchable: !1,
+  key: "%LIA",
+  source: "tog"
+}, {
+  value: "Limmared",
+  searchable: !1,
+  key: "%LME",
+  source: "tog"
+}, {
+  value: "Lindalen",
+  searchable: !1,
+  key: "%LLN",
+  source: "tog"
+}, {
+  value: "Lindekullen",
+  searchable: !1,
+  key: "%LKN",
+  source: "tog"
+}, {
+  value: "Lindome",
+  searchable: !1,
+  key: "%LDO",
+  source: "tog"
+}, {
+  value: "Linghem",
+  searchable: !1,
+  key: "%LGM",
+  source: "tog"
+}, {
+  value: "Lingvallen",
+  searchable: !1,
+  key: "%LIV",
+  source: "tog"
+}, {
+  value: "Linköping",
+  searchable: !1,
+  key: "%LP",
+  source: "tog"
+}, {
+  value: "Liseberg",
+  searchable: !1,
+  key: "%LIS",
+  source: "tog"
+}, {
+  value: "Ljung",
+  searchable: !1,
+  key: "%LJU",
+  source: "tog"
+}, {
+  value: "Ljungskile",
+  searchable: !1,
+  key: "%LJ",
+  source: "tog"
+}, {
+  value: "Lockarp",
+  searchable: !1,
+  key: "%LRP",
+  source: "tog"
+}, {
+  value: "Lund C",
+  searchable: !1,
+  key: "%LU",
+  source: "tog"
+}, {
+  value: "Lundavägen",
+  searchable: !1,
+  key: "%LDV",
+  source: "tog"
+}, {
+  value: "Lunnarp",
+  searchable: !1,
+  key: "%LUP",
+  source: "tog"
+}, {
+  value: "Lödöse Södra",
+  searchable: !1,
+  key: "%LES",
+  source: "tog"
+}, {
+  value: "Lönneberga",
+  searchable: !1,
+  key: "%LÖN",
+  source: "tog"
+}, {
+  value: "Malmbäck",
+  searchable: !1,
+  key: "%MBÄ",
+  source: "tog"
+}, {
+  value: "Malmsjö",
+  searchable: !1,
+  key: "%MSL",
+  source: "tog"
+}, {
+  value: "Malmö C",
+  searchable: !1,
+  key: "%M_",
+  source: "tog"
+}, {
+  value: "Malmö C",
+  searchable: !1,
+  key: "%M",
+  source: "tog"
+}, {
+  value: "Malmö C",
+  searchable: !1,
+  key: "%MC",
+  source: "tog"
+}, {
+  value: "Malmö C",
+  searchable: !1,
+  key: "%MCE",
+  source: "tog"
+}, {
+  value: "Malmö Gbg",
+  searchable: !1,
+  key: "%MGB",
+  source: "tog"
+}, {
+  value: "Malmö Persborg",
+  searchable: !1,
+  key: "%MPB",
+  source: "tog"
+}, {
+  value: "Malmö Östervärn",
+  searchable: !1,
+  key: "%ÖVN",
+  source: "tog"
+}, {
+  value: "Mantorp",
+  searchable: !1,
+  key: "%MT",
+  source: "tog"
+}, {
+  value: "Maria",
+  searchable: !1,
+  key: "%MIA",
+  source: "tog"
+}, {
+  value: "Mariannelund",
+  searchable: !1,
+  key: "%MND",
+  source: "tog"
+}, {
+  value: "Mariedamm",
+  searchable: !1,
+  key: "%MDM",
+  source: "tog"
+}, {
+  value: "Markaryd",
+  searchable: !1,
+  key: "%MRD",
+  source: "tog"
+}, {
+  value: "Mellby",
+  searchable: !1,
+  key: "%MLB",
+  source: "tog"
+}, {
+  value: "Mellerud",
+  searchable: !1,
+  key: "%ML",
+  source: "tog"
+}, {
+  value: "Mjölby",
+  searchable: !1,
+  key: "%MY",
+  source: "tog"
+}, {
+  value: "Moheda",
+  searchable: !1,
+  key: "%MO",
+  source: "tog"
+}, {
+  value: "Moholm",
+  searchable: !1,
+  key: "%MH",
+  source: "tog"
+}, {
+  value: "Mollaryd",
+  searchable: !1,
+  key: "%MOY",
+  source: "tog"
+}, {
+  value: "Mon",
+  searchable: !1,
+  key: "%MON",
+  source: "tog"
+}, {
+  value: "Mosselund",
+  searchable: !1,
+  key: "%MUD",
+  source: "tog"
+}, {
+  value: "Motala",
+  searchable: !1,
+  key: "%MOT",
+  source: "tog"
+}, {
+  value: "Mullsjö",
+  searchable: !1,
+  key: "%MU",
+  source: "tog"
+}, {
+  value: "Munkedal",
+  searchable: !1,
+  key: "%MKL",
+  source: "tog"
+}, {
+  value: "Mölnbo",
+  searchable: !1,
+  key: "%MÖ",
+  source: "tog"
+}, {
+  value: "Mölndal",
+  searchable: !1,
+  key: "%MDN",
+  source: "tog"
+}, {
+  value: "Mölndal",
+  searchable: !1,
+  key: "%MDÖ",
+  source: "tog"
+}, {
+  value: "Mölnlycke",
+  searchable: !1,
+  key: "%MYK",
+  source: "tog"
+}, {
+  value: "Mörarp",
+  searchable: !1,
+  key: "%MÖR",
+  source: "tog"
+}, {
+  value: "Mörlunda",
+  searchable: !1,
+  key: "%MÖA",
+  source: "tog"
+}, {
+  value: "Mörrum",
+  searchable: !1,
+  key: "%MRU",
+  source: "tog"
+}, {
+  value: "Målilla",
+  searchable: !1,
+  key: "%MÅA",
+  source: "tog"
+}, {
+  value: "Månsarp",
+  searchable: !1,
+  key: "%MÅP",
+  source: "tog"
+}, {
+  value: "Nol",
+  searchable: !1,
+  key: "%NOL",
+  source: "tog"
+}, {
+  value: "Nordskogen",
+  searchable: !1,
+  key: "%NOSK",
+  source: "tog"
+}, {
+  value: "Norrahammar",
+  searchable: !1,
+  key: "%NHR",
+  source: "tog"
+}, {
+  value: "Norrköping C",
+  searchable: !1,
+  key: "%NR",
+  source: "tog"
+}, {
+  value: "Norsesund",
+  searchable: !1,
+  key: "%NS",
+  source: "tog"
+}, {
+  value: "Norsesund Västra",
+  searchable: !1,
+  key: "%NDV",
+  source: "tog"
+}, {
+  value: "Norsholm",
+  searchable: !1,
+  key: "%NH",
+  source: "tog"
+}, {
+  value: "NULL",
+  searchable: !1,
+  key: "%DER",
+  source: "tog"
+}, {
+  value: "NULL",
+  searchable: !1,
+  key: "%GÄ",
+  source: "tog"
+}, {
+  value: "NULL",
+  searchable: !1,
+  key: "%HEL F",
+  source: "tog"
+}, {
+  value: "NULL",
+  searchable: !1,
+  key: "%MAS",
+  source: "tog"
+}, {
+  value: "NULL",
+  searchable: !1,
+  key: "%ÖSTP",
+  source: "tog"
+}, {
+  value: "NULL",
+  searchable: !1,
+  key: "%R F",
+  source: "tog"
+}, {
+  value: "NULL",
+  searchable: !1,
+  key: "%RE F",
+  source: "tog"
+}, {
+  value: "NULL",
+  searchable: !1,
+  key: "%SNN",
+  source: "tog"
+}, {
+  value: "Nybro",
+  searchable: !1,
+  key: "%NYB",
+  source: "tog"
+}, {
+  value: "Nyckelsjön",
+  searchable: !1,
+  key: "%NSJ",
+  source: "tog"
+}, {
+  value: "Nygård",
+  searchable: !1,
+  key: "%NYG",
+  source: "tog"
+}, {
+  value: "Nyköping",
+  searchable: !1,
+  key: "%NK",
+  source: "tog"
+}, {
+  value: "Nymölla",
+  searchable: !1,
+  key: "%NYM",
+  source: "tog"
+}, {
+  value: "Nässjö",
+  searchable: !1,
+  key: "%NÄ",
+  source: "tog"
+}, {
+  value: "Nässjö C",
+  searchable: !1,
+  key: "%N",
+  source: "tog"
+}, {
+  value: "Nättraby",
+  searchable: !1,
+  key: "%NÄT",
+  source: "tog"
+}, {
+  value: "Nödinge",
+  searchable: !1,
+  key: "%NÖE",
+  source: "tog"
+}, {
+  value: "Olofström",
+  searchable: !1,
+  key: "%OF",
+  source: "tog"
+}, {
+  value: "Olskroken",
+  searchable: !1,
+  key: "%OR",
+  source: "tog"
+}, {
+  value: "Ormaryd",
+  searchable: !1,
+  key: "%ORY",
+  source: "tog"
+}, {
+  value: "Osby",
+  searchable: !1,
+  key: "%O",
+  source: "tog"
+}, {
+  value: "Oskarshamn",
+  searchable: !1,
+  key: "%OH",
+  source: "tog"
+}, {
+  value: "Oskarström",
+  searchable: !1,
+  key: "%OM",
+  source: "tog"
+}, {
+  value: "Oxie",
+  searchable: !1,
+  key: "%OX",
+  source: "tog"
+}, {
+  value: "Partille",
+  searchable: !1,
+  key: "%P",
+  source: "tog"
+}, {
+  value: "Perstorp",
+  searchable: !1,
+  key: "%PT",
+  source: "tog"
+}, {
+  value: "Påarp",
+  searchable: !1,
+  key: "%PÅA",
+  source: "tog"
+}, {
+  value: "Rabbalshede",
+  searchable: !1,
+  key: "%RBH",
+  source: "tog"
+}, {
+  value: "Ralingsås",
+  searchable: !1,
+  key: "%RAS",
+  source: "tog"
+}, {
+  value: "Ramlösa",
+  searchable: !1,
+  key: "%RAM",
+  source: "tog"
+}, {
+  value: "Reftele",
+  searchable: !1,
+  key: "%RFT",
+  source: "tog"
+}, {
+  value: "Regumatorp",
+  searchable: !1,
+  key: "%RMTP",
+  source: "tog"
+}, {
+  value: "Rocksjön",
+  searchable: !1,
+  key: "%RKÖ",
+  source: "tog"
+}, {
+  value: "Ronneby",
+  searchable: !1,
+  key: "%RB",
+  source: "tog"
+}, {
+  value: "Rydaholm",
+  searchable: !1,
+  key: "%RYM",
+  source: "tog"
+}, {
+  value: "Rydebäck",
+  searchable: !1,
+  key: "%RYÄ",
+  source: "tog"
+}, {
+  value: "Rydsgård",
+  searchable: !1,
+  key: "%RDG",
+  source: "tog"
+}, {
+  value: "Rynge",
+  searchable: !1,
+  key: "%RYE",
+  source: "tog"
+}, {
+  value: "Ryr",
+  searchable: !1,
+  key: "%RYR",
+  source: "tog"
+}, {
+  value: "Räppe",
+  searchable: !1,
+  key: "%RÄP",
+  source: "tog"
+}, {
+  value: "Rävlanda",
+  searchable: !1,
+  key: "%RD",
+  source: "tog"
+}, {
+  value: "Rödberg",
+  searchable: !1,
+  key: "%RÖ",
+  source: "tog"
+}, {
+  value: "Rönneshytta",
+  searchable: !1,
+  key: "%RH",
+  source: "tog"
+}, {
+  value: "Rönninge",
+  searchable: !1,
+  key: "%RÖN",
+  source: "tog"
+}, {
+  value: "Rörstorp",
+  searchable: !1,
+  key: "%RÖP",
+  source: "tog"
+}, {
+  value: "Rörvik",
+  searchable: !1,
+  key: "%RK",
+  source: "tog"
+}, {
+  value: "Råskogen",
+  searchable: !1,
+  key: "%RÅS",
+  source: "tog"
+}, {
+  value: "Saleboda",
+  searchable: !1,
+  key: "%SLB",
+  source: "tog"
+}, {
+  value: "Sandared",
+  searchable: !1,
+  key: "%SAE",
+  source: "tog"
+}, {
+  value: "Sandbäk",
+  searchable: !1,
+  key: "%SAK",
+  source: "tog"
+}, {
+  value: "Sandhem",
+  searchable: !1,
+  key: "%SM",
+  source: "tog"
+}, {
+  value: "Sannarp",
+  searchable: !1,
+  key: "%SARP",
+  source: "tog"
+}, {
+  value: "Silverdalens bruk",
+  searchable: !1,
+  key: "%SID",
+  source: "tog"
+}, {
+  value: "Silverdalens centrum",
+  searchable: !1,
+  key: "%SIC",
+  source: "tog"
+}, {
+  value: "Simonstorp",
+  searchable: !1,
+  key: "%SMT",
+  source: "tog"
+}, {
+  value: "Simrishamn",
+  searchable: !1,
+  key: "%SI",
+  source: "tog"
+}, {
+  value: "Skee",
+  searchable: !1,
+  key: "%SKE",
+  source: "tog"
+}, {
+  value: "Skene",
+  searchable: !1,
+  key: "%SEE",
+  source: "tog"
+}, {
+  value: "Skeppshult",
+  searchable: !1,
+  key: "%SPH",
+  source: "tog"
+}, {
+  value: "Skillingaryd",
+  searchable: !1,
+  key: "%SYD",
+  source: "tog"
+}, {
+  value: "Skruv",
+  searchable: !1,
+  key: "%SRU",
+  source: "tog"
+}, {
+  value: "Skurup",
+  searchable: !1,
+  key: "%SRP",
+  source: "tog"
+}, {
+  value: "Skymossen",
+  searchable: !1,
+  key: "%SKMS",
+  source: "tog"
+}, {
+  value: "Skytts Vemmerlöv",
+  searchable: !1,
+  key: "%SVÖ",
+  source: "tog"
+}, {
+  value: "Skälebol",
+  searchable: !1,
+  key: "%SKBL",
+  source: "tog"
+}, {
+  value: "Skänninge",
+  searchable: !1,
+  key: "%SKN",
+  source: "tog"
+}, {
+  value: "Sköldinge",
+  searchable: !1,
+  key: "%SDE",
+  source: "tog"
+}, {
+  value: "Skövde C",
+  searchable: !1,
+  key: "%SK",
+  source: "tog"
+}, {
+  value: "Smedby",
+  searchable: !1,
+  key: "%SDY",
+  source: "tog"
+}, {
+  value: "Smedstorp",
+  searchable: !1,
+  key: "%SMP",
+  source: "tog"
+}, {
+  value: "Smålandsstenar",
+  searchable: !1,
+  key: "%SDR",
+  source: "tog"
+}, {
+  value: "Solna",
+  searchable: !1,
+  key: "%SO",
+  source: "tog"
+}, {
+  value: "Sommen",
+  searchable: !1,
+  key: "%SMN",
+  source: "tog"
+}, {
+  value: "Sparreholm",
+  searchable: !1,
+  key: "%SP",
+  source: "tog"
+}, {
+  value: "Spjutsbygd",
+  searchable: !1,
+  key: "%SPJ",
+  source: "tog"
+}, {
+  value: "Stehag",
+  searchable: !1,
+  key: "%SG",
+  source: "tog"
+}, {
+  value: "Stenkullen",
+  searchable: !1,
+  key: "%SN",
+  source: "tog"
+}, {
+  value: "Stensjön",
+  searchable: !1,
+  key: "%SNÖ",
+  source: "tog"
+}, {
+  value: "Stenstorp",
+  searchable: !1,
+  key: "%SS",
+  source: "tog"
+}, {
+  value: "Stenungsund",
+  searchable: !1,
+  key: "%SNU",
+  source: "tog"
+}, {
+  value: "Stjärnhov",
+  searchable: !1,
+  key: "%SH",
+  source: "tog"
+}, {
+  value: "Stockaryd",
+  searchable: !1,
+  key: "%SY",
+  source: "tog"
+}, {
+  value: "Stockholm C",
+  searchable: !1,
+  key: "%CST",
+  source: "tog"
+}, {
+  value: "Stockholm Södra",
+  searchable: !1,
+  key: "%SST",
+  source: "tog"
+}, {
+  value: "Stolpen",
+  searchable: !1,
+  key: "%SOE",
+  source: "tog"
+}, {
+  value: "Stolpslugan",
+  searchable: !1,
+  key: "%SPN",
+  source: "tog"
+}, {
+  value: "Stora Höga",
+  searchable: !1,
+  key: "%STH",
+  source: "tog"
+}, {
+  value: "Stora Köpinge",
+  searchable: !1,
+  key: "%SÖE",
+  source: "tog"
+}, {
+  value: "Strpngsjö",
+  searchable: !1,
+  key: "%STÖ",
+  source: "tog"
+}, {
+  value: "Strömstad",
+  searchable: !1,
+  key: "%SMD",
+  source: "tog"
+}, {
+  value: "Strömstad gbg",
+  searchable: !1,
+  key: "%SGD",
+  source: "tog"
+}, {
+  value: "Stuvsta",
+  searchable: !1,
+  key: "%STA",
+  source: "tog"
+}, {
+  value: "Stångby",
+  searchable: !1,
+  key: "%STB",
+  source: "tog"
+}, {
+  value: "Surte",
+  searchable: !1,
+  key: "%SUE",
+  source: "tog"
+}, {
+  value: "Svaneholm",
+  searchable: !1,
+  key: "%SVM",
+  source: "tog"
+}, {
+  value: "Svarte",
+  searchable: !1,
+  key: "%STE",
+  source: "tog"
+}, {
+  value: "Svedala",
+  searchable: !1,
+  key: "%SEA",
+  source: "tog"
+}, {
+  value: "Svenshögen",
+  searchable: !1,
+  key: "%SVG",
+  source: "tog"
+}, {
+  value: "Svågertorp",
+  searchable: !1,
+  key: "%STP",
+  source: "tog"
+}, {
+  value: "Säve",
+  searchable: !1,
+  key: "%SVE",
+  source: "tog"
+}, {
+  value: "Sävedalen",
+  searchable: !1,
+  key: "%SEL",
+  source: "tog"
+}, {
+  value: "Sävenäs",
+  searchable: !1,
+  key: "%SÄV",
+  source: "tog"
+}, {
+  value: "Sävenäs",
+  searchable: !1,
+  key: "%SÄR",
+  source: "tog"
+}, {
+  value: "Sävenäs rangerbangård",
+  searchable: !1,
+  key: "%SÅR",
+  source: "tog"
+}, {
+  value: "Sävsjö",
+  searchable: !1,
+  key: "%SÄ",
+  source: "tog"
+}, {
+  value: "Söderby",
+  searchable: !1,
+  key: "%SÖDY",
+  source: "tog"
+}, {
+  value: "Södertälje Syd övre",
+  searchable: !1,
+  key: "%SÖÖ",
+  source: "tog"
+}, {
+  value: "Sölvesborg",
+  searchable: !1,
+  key: "%SÖG",
+  source: "tog"
+}, {
+  value: "Sösdala",
+  searchable: !1,
+  key: "%SÖLA",
+  source: "tog"
+}, {
+  value: "Taberg",
+  searchable: !1,
+  key: "%TAG",
+  source: "tog"
+}, {
+  value: "Tanum",
+  searchable: !1,
+  key: "%TNU",
+  source: "tog"
+}, {
+  value: "Teckomatorp",
+  searchable: !1,
+  key: "%TP",
+  source: "tog"
+}, {
+  value: "Tenhult",
+  searchable: !1,
+  key: "%TH",
+  source: "tog"
+}, {
+  value: "Tippen",
+  searchable: !1,
+  key: "%TIP",
+  source: "tog"
+}, {
+  value: "Tjunnaryd",
+  searchable: !1,
+  key: "%TJ",
+  source: "tog"
+}, {
+  value: "Tjörnarp",
+  searchable: !1,
+  key: "%TÖ",
+  source: "tog"
+}, {
+  value: "Tofta",
+  searchable: !1,
+  key: "%TOF",
+  source: "tog"
+}, {
+  value: "Tomelilla",
+  searchable: !1,
+  key: "%TLI",
+  source: "tog"
+}, {
+  value: "Torbacken",
+  searchable: !1,
+  key: "%TBN",
+  source: "tog"
+}, {
+  value: "Torebo",
+  searchable: !1,
+  key: "%TEO",
+  source: "tog"
+}, {
+  value: "Tornhill",
+  searchable: !1,
+  key: "%THL",
+  source: "tog"
+}, {
+  value: "Torpåkra",
+  searchable: !1,
+  key: "%TOP",
+  source: "tog"
+}, {
+  value: "Torskors",
+  searchable: !1,
+  key: "%TKS",
+  source: "tog"
+}, {
+  value: "Torup",
+  searchable: !1,
+  key: "%TOU",
+  source: "tog"
+}, {
+  value: "Tranås",
+  searchable: !1,
+  key: "%TNS",
+  source: "tog"
+}, {
+  value: "Trekanten",
+  searchable: !1,
+  key: "%TRE",
+  source: "tog"
+}, {
+  value: "Trelleborg",
+  searchable: !1,
+  key: "%TRG",
+  source: "tog"
+}, {
+  value: "Triangeln",
+  searchable: !1,
+  key: "%TRI",
+  source: "tog"
+}, {
+  value: "Trollhättan",
+  searchable: !1,
+  key: "%THN",
+  source: "tog"
+}, {
+  value: "Tullered",
+  searchable: !1,
+  key: "%TYE",
+  source: "tog"
+}, {
+  value: "Tullinge",
+  searchable: !1,
+  key: "%TUL",
+  source: "tog"
+}, {
+  value: "Tumba",
+  searchable: !1,
+  key: "%TU",
+  source: "tog"
+}, {
+  value: "Tunneby",
+  searchable: !1,
+  key: "%TUN",
+  source: "tog"
+}, {
+  value: "Tyringe",
+  searchable: !1,
+  key: "%TY",
+  source: "tog"
+}, {
+  value: "Tälle",
+  searchable: !1,
+  key: "%TÄL",
+  source: "tog"
+}, {
+  value: "Töreboda",
+  searchable: !1,
+  key: "%T",
+  source: "tog"
+}, {
+  value: "Tösse",
+  searchable: !1,
+  key: "%TÖE",
+  source: "tog"
+}, {
+  value: "Tågarp",
+  searchable: !1,
+  key: "%TGP",
+  source: "tog"
+}, {
+  value: "Uddevalla C",
+  searchable: !1,
+  key: "%UV",
+  source: "tog"
+}, {
+  value: "Uddevalla östra",
+  searchable: !1,
+  key: "%UÖ",
+  source: "tog"
+}, {
+  value: "Ulriksdal",
+  searchable: !1,
+  key: "%UDL",
+  source: "tog"
+}, {
+  value: "Ulvstorp",
+  searchable: !1,
+  key: "%UTP",
+  source: "tog"
+}, {
+  value: "Upphäred",
+  searchable: !1,
+  key: "%UPH",
+  source: "tog"
+}, {
+  value: "Uppsala C",
+  searchable: !1,
+  key: "%U",
+  source: "tog"
+}, {
+  value: "Utsikten",
+  searchable: !1,
+  key: "%UTS",
+  source: "tog"
+}, {
+  value: "Vaggeryd",
+  searchable: !1,
+  key: "%VGD",
+  source: "tog"
+}, {
+  value: "Vallkärra",
+  searchable: !1,
+  key: "%VKÄ",
+  source: "tog"
+}, {
+  value: "Vallåkra",
+  searchable: !1,
+  key: "%VÅK",
+  source: "tog"
+}, {
+  value: "Vara",
+  searchable: !1,
+  key: "%VAA",
+  source: "tog"
+}, {
+  value: "Varberg",
+  searchable: !1,
+  key: "%VB",
+  source: "tog"
+}, {
+  value: "Vargön",
+  searchable: !1,
+  key: "%VAG",
+  source: "tog"
+}, {
+  value: "Varpemossen",
+  searchable: !1,
+  key: "%VPM",
+  source: "tog"
+}, {
+  value: "Vartofta",
+  searchable: !1,
+  key: "%VF",
+  source: "tog"
+}, {
+  value: "Veddige",
+  searchable: !1,
+  key: "%VDI",
+  source: "tog"
+}, {
+  value: "Vedum",
+  searchable: !1,
+  key: "%VED",
+  source: "tog"
+}, {
+  value: "Vegeholm",
+  searchable: !1,
+  key: "%VH",
+  source: "tog"
+}, {
+  value: "Vejbyslätt",
+  searchable: !1,
+  key: "%VBT",
+  source: "tog"
+}, {
+  value: "Vekerum",
+  searchable: !1,
+  key: "%VRU",
+  source: "tog"
+}, {
+  value: "Velanda",
+  searchable: !1,
+  key: "%VEA",
+  source: "tog"
+}, {
+  value: "Velanda Söddra",
+  searchable: !1,
+  key: "%VEAS",
+  source: "tog"
+}, {
+  value: "Vetlanda",
+  searchable: !1,
+  key: "%VTA",
+  source: "tog"
+}, {
+  value: "Viarp",
+  searchable: !1,
+  key: "%VIP",
+  source: "tog"
+}, {
+  value: "Vikingestad",
+  searchable: !1,
+  key: "%VSD",
+  source: "tog"
+}, {
+  value: "Vimarp",
+  searchable: !1,
+  key: "%VIM",
+  source: "tog"
+}, {
+  value: "Vinslöv",
+  searchable: !1,
+  key: "%VÖV",
+  source: "tog"
+}, {
+  value: "Viskafors",
+  searchable: !1,
+  key: "%VFO",
+  source: "tog"
+}, {
+  value: "Vislanda",
+  searchable: !1,
+  key: "%VS",
+  source: "tog"
+}, {
+  value: "Vissefjärda",
+  searchable: !1,
+  key: "%VFA",
+  source: "tog"
+}, {
+  value: "Vittsjö",
+  searchable: !1,
+  key: "%VSJ",
+  source: "tog"
+}, {
+  value: "Vretstorp",
+  searchable: !1,
+  key: "%VT",
+  source: "tog"
+}, {
+  value: "Vällnäs",
+  searchable: !1,
+  key: "%VLN",
+  source: "tog"
+}, {
+  value: "Vänersborg",
+  searchable: !1,
+  key: "%VG",
+  source: "tog"
+}, {
+  value: "Väring",
+  searchable: !1,
+  key: "%VÄ",
+  source: "tog"
+}, {
+  value: "Värnamo",
+  searchable: !1,
+  key: "%V",
+  source: "tog"
+}, {
+  value: "Värö",
+  searchable: !1,
+  key: "%VRÖ",
+  source: "tog"
+}, {
+  value: "Västerås C",
+  searchable: !1,
+  key: "%VÅ",
+  source: "tog"
+}, {
+  value: "Västerås Norra",
+  searchable: !1,
+  key: "%VÅN",
+  source: "tog"
+}, {
+  value: "Västra Bodarne",
+  searchable: !1,
+  key: "%VBD",
+  source: "tog"
+}, {
+  value: "Västra Torup",
+  searchable: !1,
+  key: "%VTO",
+  source: "tog"
+}, {
+  value: "Vätteryd",
+  searchable: !1,
+  key: "%VÄD",
+  source: "tog"
+}, {
+  value: "Växjö",
+  searchable: !1,
+  key: "%VÖ",
+  source: "tog"
+}, {
+  value: "Vårgårda",
+  searchable: !1,
+  key: "%VGÅ",
+  source: "tog"
+}, {
+  value: "Ystad",
+  searchable: !1,
+  key: "%Y",
+  source: "tog"
+}, {
+  value: "Ytterby",
+  searchable: !1,
+  key: "%YB",
+  source: "tog"
+}, {
+  value: "Älekärr",
+  searchable: !1,
+  key: "%ÄLR",
+  source: "tog"
+}, {
+  value: "Älgarås",
+  searchable: !1,
+  key: "%ÄL",
+  source: "tog"
+}, {
+  value: "Älmhult",
+  searchable: !1,
+  key: "%ÄH",
+  source: "tog"
+}, {
+  value: "Älmhult",
+  searchable: !1,
+  key: "%ÄLM",
+  source: "tog"
+}, {
+  value: "Älvsjö",
+  searchable: !1,
+  key: "%ÄS",
+  source: "tog"
+}, {
+  value: "Älvsjö godsbangård",
+  searchable: !1,
+  key: "%ÄSG",
+  source: "tog"
+}, {
+  value: "Älvängen",
+  searchable: !1,
+  key: "%ÄN",
+  source: "tog"
+}, {
+  value: "Äng",
+  searchable: !1,
+  key: "%ÄNG",
+  source: "tog"
+}, {
+  value: "Ängelholm",
+  searchable: !1,
+  key: "%Ä",
+  source: "tog"
+}, {
+  value: "Ättekulla",
+  searchable: !1,
+  key: "%ÄTK",
+  source: "tog"
+}, {
+  value: "Ödåkra",
+  searchable: !1,
+  key: "%ÖDA",
+  source: "tog"
+}, {
+  value: "Önaskogen",
+  searchable: !1,
+  key: "%ÖNA",
+  source: "tog"
+}, {
+  value: "Önnestad",
+  searchable: !1,
+  key: "%ÖND",
+  source: "tog"
+}, {
+  value: "Örebro C",
+  searchable: !1,
+  key: "%ÖR",
+  source: "tog"
+}, {
+  value: "Öresund Midt",
+  searchable: !1,
+  key: "%ÖRM",
+  source: "tog"
+}, {
+  value: "Örsjö",
+  searchable: !1,
+  key: "%ÖRS",
+  source: "tog"
+}, {
+  value: "Örtofta",
+  searchable: !1,
+  key: "%Ö",
+  source: "tog"
+}, {
+  value: "Östansjö",
+  searchable: !1,
+  key: "%ÖJ",
+  source: "tog"
+}, {
+  value: "Överby",
+  searchable: !1,
+  key: "%ÖVB",
+  source: "tog"
+}, {
+  value: "Öxnered",
+  searchable: !1,
+  key: "%ÖX",
+  source: "tog"
+}, {
+  value: "Åby",
+  searchable: !1,
+  key: "%ÅBY",
+  source: "tog"
+}, {
+  value: "Åkarp",
+  searchable: !1,
+  key: "%ÅK",
+  source: "tog"
+}, {
+  value: "Åkarps N",
+  searchable: !1,
+  key: "%ÅKN",
+  source: "tog"
+}, {
+  value: "Åmål",
+  searchable: !1,
+  key: "%ÅL",
+  source: "tog"
+}, {
+  value: "Ångsågsmossen",
+  searchable: !1,
+  key: "%ÅMN",
+  source: "tog"
+}, {
+  value: "Ånimskog",
+  searchable: !1,
+  key: "%ÅNM",
+  source: "tog"
+}, {
+  value: "Årstaberg",
+  searchable: !1,
+  key: "%ÅBE",
+  source: "tog"
+}, {
+  value: "Åryd",
+  searchable: !1,
+  key: "%ÅRD",
+  source: "tog"
+}, {
+  value: "Åsa",
+  searchable: !1,
+  key: "%ÅSA",
+  source: "tog"
+}, {
+  value: "Åsbro",
+  searchable: !1,
+  key: "%Å",
+  source: "tog"
+}, {
+  value: "Åsensbruk",
+  searchable: !1,
+  key: "%ÅB",
+  source: "tog"
+}, {
+  value: "Åstorp",
+  searchable: !1,
+  key: "%ÅP",
+  source: "tog"
+}, {
+  value: "Södertälje Hamn",
+  searchable: !1,
+  key: "%SÖD",
+  source: "tog"
+}, {
+  value: "Södertälje Syd undre",
+  searchable: !1,
+  key: "%SÖU",
+  source: "tog"
+}, {
+  value: "Nässjö central",
+  searchable: !1,
+  key: "%N",
+  source: "tog"
+}, {
+  value: "Fehmarn-Burg",
+  searchable: !1,
+  key: "&ABUF",
+  source: "tog"
+}, {
+  value: "Burg (Fehmarn) West",
+  searchable: !1,
+  key: "&ABUW",
+  source: "tog"
+}, {
+  value: "Hamburg-Eidelstedt Ef",
+  searchable: !1,
+  key: "&AE_F",
+  source: "tog"
+}, {
+  value: "Elmshorn",
+  searchable: !1,
+  key: "&AEL",
+  source: "tog"
+}, {
+  value: "Flensburg Weiche",
+  searchable: !1,
+  key: "&AFW",
+  source: "tog"
+}, {
+  value: "Großenbrode",
+  searchable: !1,
+  key: "&AGRO",
+  source: "tog"
+}, {
+  value: "Harrislee",
+  searchable: !1,
+  key: "&AHAL",
+  source: "tog"
+}, {
+  value: "Hamburg-Harburg",
+  searchable: !1,
+  key: "&AHAR",
+  source: "tog"
+}, {
+  value: "Hamburg-Dammtor",
+  searchable: !1,
+  key: "&AHD",
+  source: "tog"
+}, {
+  value: "Kiel Hbf",
+  searchable: !1,
+  key: "&AK",
+  source: "tog"
+}, {
+  value: "Hamburg Langenfelde Bbf",
+  searchable: !1,
+  key: "&ALA",
+  source: "tog"
+}, {
+  value: "Lübeck-Travemünde Hafen",
+  searchable: !1,
+  key: "&ALTH",
+  source: "tog"
+}, {
+  value: "Lübeck Hbf",
+  searchable: !1,
+  key: "&ALY",
+  source: "tog"
+}, {
+  value: "RBF Maschen",
+  searchable: !1,
+  key: "&AM",
+  source: "tog"
+}, {
+  value: "Niebüll",
+  searchable: !1,
+  key: "&ANB",
+  source: "tog"
+}, {
+  value: "Nortorf",
+  searchable: !1,
+  key: "&ANF",
+  source: "tog"
+}, {
+  value: "Bad Oldesloe",
+  searchable: !1,
+  key: "&AO",
+  source: "tog"
+}, {
+  value: "Pinneberg",
+  searchable: !1,
+  key: "&AP",
+  source: "tog"
+}, {
+  value: "Rendsburg",
+  searchable: !1,
+  key: "&ARD",
+  source: "tog"
+}, {
+  value: "Bad Schwartau",
+  searchable: !1,
+  key: "&ASCH",
+  source: "tog"
+}, {
+  value: "Schleswig",
+  searchable: !1,
+  key: "&ASW",
+  source: "tog"
+}, {
+  value: "Uphusum",
+  searchable: !1,
+  key: "&AUP",
+  source: "tog"
+}, {
+  value: "Basel Bad Bf",
+  searchable: !1,
+  key: "&BAD",
+  source: "tog"
+}, {
+  value: "Bochum",
+  searchable: !1,
+  key: "&BCH",
+  source: "tog"
+}, {
+  value: "Berlin-Charlottenburg",
+  searchable: !1,
+  key: "&BCHB",
+  source: "tog"
+}, {
+  value: "Bebra",
+  searchable: !1,
+  key: "&BEB",
+  source: "tog"
+}, {
+  value: "Berlin Gesundbrunnen",
+  searchable: !1,
+  key: "&BGS",
+  source: "tog"
+}, {
+  value: "Berlin Ostbahnhof",
+  searchable: !1,
+  key: "&BHF",
+  source: "tog"
+}, {
+  value: "Bielefeld",
+  searchable: !1,
+  key: "&BIE",
+  source: "tog"
+}, {
+  value: "Berlin",
+  searchable: !1,
+  key: "&BLN",
+  source: "tog"
+}, {
+  value: "Berlin Hbf",
+  searchable: !1,
+  key: "&BLS",
+  source: "tog"
+}, {
+  value: "Berlin-Rummelsburg",
+  searchable: !1,
+  key: "&BRGBT",
+  source: "tog"
+}, {
+  value: "Berlin-Spandau",
+  searchable: !1,
+  key: "&BSPD",
+  source: "tog"
+}, {
+  value: "Bad Bentheim",
+  searchable: !1,
+  key: "&BTH",
+  source: "tog"
+}, {
+  value: "Bützow",
+  searchable: !1,
+  key: "&BTZ",
+  source: "tog"
+}, {
+  value: "Düsseldorf",
+  searchable: !1,
+  key: "&DDF",
+  source: "tog"
+}, {
+  value: "Dresden Hbf",
+  searchable: !1,
+  key: "&DH",
+  source: "tog"
+}, {
+  value: "Dortmund",
+  searchable: !1,
+  key: "&DMD",
+  source: "tog"
+}, {
+  value: "Dresden Neustadt",
+  searchable: !1,
+  key: "&DN",
+  source: "tog"
+}, {
+  value: "Dresden",
+  searchable: !1,
+  key: "&DRD",
+  source: "tog"
+}, {
+  value: "Bad Schandau",
+  searchable: !1,
+  key: "&DSA",
+  source: "tog"
+}, {
+  value: "Duisburg",
+  searchable: !1,
+  key: "&DUB",
+  source: "tog"
+}, {
+  value: "Essen Hbf",
+  searchable: !1,
+  key: "&EE",
+  source: "tog"
+}, {
+  value: "Emmerich",
+  searchable: !1,
+  key: "&EEM",
+  source: "tog"
+}, {
+  value: "Essen",
+  searchable: !1,
+  key: "&ESS",
+  source: "tog"
+}, {
+  value: "Frankfurt",
+  searchable: !1,
+  key: "&FFM",
+  source: "tog"
+}, {
+  value: "Flensburg",
+  searchable: !1,
+  key: "&FLB",
+  source: "tog"
+}, {
+  value: "Fulda",
+  searchable: !1,
+  key: "&FUL",
+  source: "tog"
+}, {
+  value: "Hagen",
+  searchable: !1,
+  key: "&HAG",
+  source: "tog"
+}, {
+  value: "Hamm",
+  searchable: !1,
+  key: "&HAM",
+  source: "tog"
+}, {
+  value: "Hannover",
+  searchable: !1,
+  key: "&HAN",
+  source: "tog"
+}, {
+  value: "Hamburg Hbf",
+  searchable: !1,
+  key: "&HMB",
+  source: "tog"
+}, {
+  value: "Bonn",
+  searchable: !1,
+  key: "&KBO",
+  source: "tog"
+}, {
+  value: "Düsseldorf Hbf",
+  searchable: !1,
+  key: "&KDÜ",
+  source: "tog"
+}, {
+  value: "Kiel",
+  searchable: !1,
+  key: "&KIEL",
+  source: "tog"
+}, {
+  value: "Köln",
+  searchable: !1,
+  key: "&KLN",
+  source: "tog"
+}, {
+  value: "Maschen",
+  searchable: !1,
+  key: "&MAS",
+  source: "tog"
+}, {
+  value: "Rosenheim",
+  searchable: !1,
+  key: "&MRO",
+  source: "tog"
+}, {
+  value: "Starnberg",
+  searchable: !1,
+  key: "&MST",
+  source: "tog"
+}, {
+  value: "München Ost",
+  searchable: !1,
+  key: "&MUO",
+  source: "tog"
+}, {
+  value: "München",
+  searchable: !1,
+  key: "&MYN",
+  source: "tog"
+}, {
+  value: "Neumünster",
+  searchable: !1,
+  key: "&NEU",
+  source: "tog"
+}, {
+  value: "Würzburg Hbf",
+  searchable: !1,
+  key: "&NWH",
+  source: "tog"
+}, {
+  value: "Oldenburg",
+  searchable: !1,
+  key: "&OLD",
+  source: "tog"
+}, {
+  value: "Osnabrück",
+  searchable: !1,
+  key: "&OSN",
+  source: "tog"
+}, {
+  value: "Puttgarden",
+  searchable: !1,
+  key: "&PU",
+  source: "tog"
+}, {
+  value: "Puttgarden Portal",
+  searchable: !1,
+  key: "&PUP",
+  source: "tog"
+}, {
+  value: "Freiburg (Breisgau) Hbf",
+  searchable: !1,
+  key: "&RF",
+  source: "tog"
+}, {
+  value: "Rostock",
+  searchable: !1,
+  key: "&RHO",
+  source: "tog"
+}, {
+  value: "Karlsruhe Hbf",
+  searchable: !1,
+  key: "&RKH",
+  source: "tog"
+}, {
+  value: "Mannheim Hbf",
+  searchable: !1,
+  key: "&RM",
+  source: "tog"
+}, {
+  value: "Offenburg",
+  searchable: !1,
+  key: "&ROD",
+  source: "tog"
+}, {
+  value: "Süderlügum",
+  searchable: !1,
+  key: "&SDL",
+  source: "tog"
+}, {
+  value: "Solingen-Ohligs",
+  searchable: !1,
+  key: "&SOH",
+  source: "tog"
+}, {
+  value: "Stuttgart",
+  searchable: !1,
+  key: "&TST",
+  source: "tog"
+}, {
+  value: "Waltershof",
+  searchable: !1,
+  key: "&WAL",
+  source: "tog"
+}, {
+  value: "Ludwigslust",
+  searchable: !1,
+  key: "&WL",
+  source: "tog"
+}, {
+  value: "Wuppertal",
+  searchable: !1,
+  key: "&WPT",
+  source: "tog"
+}, {
+  value: "Wittenberge",
+  searchable: !1,
+  key: "&WW",
+  source: "tog"
+}, {
+  value: "Warnemünde",
+  searchable: !1,
+  key: "&WY",
+  source: "tog"
+}, {
+  value: "Hamburg-Altona",
+  searchable: !1,
+  key: "&AA",
+  source: "tog"
+}, {
+  value: "Aachen",
+  searchable: !1,
+  key: "&AAC",
+  source: "tog"
+}, {
+  value: "Berlin Zoologischer Garten",
+  searchable: !1,
+  key: "&BZOO",
+  source: "tog"
+}, {
+  value: "Berlin-Lichtenberg",
+  searchable: !1,
+  key: "&BLO",
+  source: "tog"
+}, {
+  value: "Chemnitz Hbf",
+  searchable: !1,
+  key: "&DC",
+  source: "tog"
+}, {
+  value: "Hamburg-Bergedorf",
+  searchable: !1,
+  key: "&BG",
+  source: "tog"
+}, {
+  value: "Hamburg Hbf",
+  searchable: !1,
+  key: "&AH",
+  source: "tog"
+}, {
+  value: "München Hbf",
+  searchable: !1,
+  key: "&MH",
+  source: "tog"
+}, {
+  value: "München Ostbahnhof     ",
+  searchable: !1,
+  key: "&MOP",
+  source: "tog"
+}, {
+  value: "Neumünster",
+  searchable: !1,
+  key: "&AN",
+  source: "tog"
+}, {
+  value: "Berlin Hbf",
+  searchable: !1,
+  key: "&BHBF",
+  source: "tog"
+}, {
+  value: "Bischofshofen",
+  searchable: !1,
+  key: "£BO",
+  source: "tog"
+}, {
+  value: "St. Johann in Tirol",
+  searchable: !1,
+  key: "£JTI",
+  source: "tog"
+}, {
+  value: "Kitzbühel",
+  searchable: !1,
+  key: "£KZB",
+  source: "tog"
+}, {
+  value: "Lend",
+  searchable: !1,
+  key: "£LD",
+  source: "tog"
+}, {
+  value: "Saalfelden",
+  searchable: !1,
+  key: "£SAA",
+  source: "tog"
+}, {
+  value: "Salzburg Hbf",
+  searchable: !1,
+  key: "£SB",
+  source: "tog"
+}, {
+  value: "Schwarzach - St Veit",
+  searchable: !1,
+  key: "£SWA",
+  source: "tog"
+}, {
+  value: "Wörgl Hbf",
+  searchable: !1,
+  key: "£W",
+  source: "tog"
+}, {
+  value: "Zell Am See",
+  searchable: !1,
+  key: "£Z",
+  source: "tog"
+}, {
+  value: "Innsbruck Hbf",
+  searchable: !1,
+  key: "£I",
+  source: "tog"
+}, {
+  value: "Bad Gastein",
+  searchable: !1,
+  key: "£BAG",
+  source: "tog"
+}, {
+  value: "Jenbach",
+  searchable: !1,
+  key: "£JB",
+  source: "tog"
+}, {
+  value: "Kirchberg in Tirol",
+  searchable: !1,
+  key: "£KIT",
+  source: "tog"
+}, {
+  value: "St.Johann im Pongau",
+  searchable: !1,
+  key: "£JP",
+  source: "tog"
+}, {
+  value: "Prag",
+  searchable: !1,
+  key: "#PHA",
+  source: "tog"
+}, {
+  value: "Albertslund",
+  searchable: !0,
+  key: "ALB",
+  source: "stog"
+}, {
+  value: "Vangede",
+  searchable: !0,
+  key: "ANG",
+  source: "stog"
+}, {
+  value: "Avedøre",
+  searchable: !0,
+  key: "AVØ",
+  source: "stog"
+}, {
+  value: "Ballerup",
+  searchable: !0,
+  key: "BA",
+  source: "stog"
+}, {
+  value: "Bagsværd",
+  searchable: !0,
+  key: "BAV",
+  source: "stog"
+}, {
+  value: "Bernstorffsvej",
+  searchable: !0,
+  key: "BFT",
+  source: "stog"
+}, {
+  value: "Birkerød",
+  searchable: !0,
+  key: "BI",
+  source: "stog"
+}, {
+  value: "Bispebjerg",
+  searchable: !0,
+  key: "BIT",
+  source: "stog"
+}, {
+  value: "Brøndby Strand",
+  searchable: !0,
+  key: "BSA",
+  source: "stog"
+}, {
+  value: "Buddinge",
+  searchable: !0,
+  key: "BUD",
+  source: "stog"
+}, {
+  value: "Brøndbyøster",
+  searchable: !0,
+  key: "BØT",
+  source: "stog"
+}, {
+  value: "Carlsberg",
+  searchable: !0,
+  key: "CB",
+  source: "stog"
+}, {
+  value: "Charlottenlund",
+  searchable: !0,
+  key: "CH",
+  source: "stog"
+}, {
+  value: "Danshøj",
+  searchable: !0,
+  key: "DAH",
+  source: "stog"
+}, {
+  value: "Dybbølsbro",
+  searchable: !0,
+  key: "DBT",
+  source: "stog"
+}, {
+  value: "Dyssegård",
+  searchable: !0,
+  key: "DYT",
+  source: "stog"
+}, {
+  value: "Egedal",
+  searchable: !0,
+  key: "EGD",
+  source: "stog"
+}, {
+  value: "Emdrup",
+  searchable: !0,
+  key: "EMT",
+  source: "stog"
+}, {
+  value: "Flintholm",
+  searchable: !0,
+  key: "FL",
+  source: "stog"
+}, {
+  value: "Farum",
+  searchable: !0,
+  key: "FM",
+  source: "stog"
+}, {
+  value: "Friheden",
+  searchable: !0,
+  key: "FRH",
+  source: "stog"
+}, {
+  value: "Frederikssund",
+  searchable: !0,
+  key: "FS",
+  source: "stog"
+}, {
+  value: "Fuglebakken",
+  searchable: !0,
+  key: "FUT",
+  source: "stog"
+}, {
+  value: "Favrholm",
+  searchable: !0,
+  key: "FVT",
+  source: "stog"
+}, {
+  value: "Grøndal",
+  searchable: !0,
+  key: "GHT",
+  source: "stog"
+}, {
+  value: "Gentofte",
+  searchable: !0,
+  key: "GJ",
+  source: "stog"
+}, {
+  value: "Glostrup",
+  searchable: !0,
+  key: "GL",
+  source: "stog"
+}, {
+  value: "Greve",
+  searchable: !0,
+  key: "GRE",
+  source: "stog"
+}, {
+  value: "Hareskov",
+  searchable: !0,
+  key: "HAR",
+  source: "stog"
+}, {
+  value: "Herlev",
+  searchable: !0,
+  key: "HER",
+  source: "stog"
+}, {
+  value: "Hillerød",
+  searchable: !0,
+  key: "HI",
+  source: "stog"
+}, {
+  value: "Hvidovre",
+  searchable: !0,
+  key: "HIT",
+  source: "stog"
+}, {
+  value: "Hellerup",
+  searchable: !0,
+  key: "HL",
+  source: "stog"
+}, {
+  value: "Holte",
+  searchable: !0,
+  key: "HOT",
+  source: "stog"
+}, {
+  value: "Høje Taastrup",
+  searchable: !0,
+  key: "HTÅ",
+  source: "stog"
+}, {
+  value: "Husum",
+  searchable: !0,
+  key: "HUT",
+  source: "stog"
+}, {
+  value: "Ishøj",
+  searchable: !0,
+  key: "IH",
+  source: "stog"
+}, {
+  value: "Islev",
+  searchable: !0,
+  key: "IST",
+  source: "stog"
+}, {
+  value: "Jersie",
+  searchable: !0,
+  key: "JSI",
+  source: "stog"
+}, {
+  value: "Jyllingevej",
+  searchable: !0,
+  key: "JYT",
+  source: "stog"
+}, {
+  value: "Jægersborg",
+  searchable: !0,
+  key: "JÆT",
+  source: "stog"
+}, {
+  value: "KB Hallen",
+  searchable: !0,
+  key: "KBN",
+  source: "stog"
+}, {
+  value: "Kildebakke",
+  searchable: !0,
+  key: "KET",
+  source: "stog"
+}, {
+  value: "København H",
+  searchable: !0,
+  key: "KH",
+  source: "stog"
+}, {
+  value: "Kildedal",
+  searchable: !0,
+  key: "KID",
+  source: "stog"
+}, {
+  value: "Køge",
+  searchable: !0,
+  key: "KJ",
+  source: "stog"
+}, {
+  value: "Køge Nord",
+  searchable: !0,
+  key: "KJN",
+  source: "stog"
+}, {
+  value: "Østerport",
+  searchable: !0,
+  key: "KK",
+  source: "stog"
+}, {
+  value: "Klampenborg",
+  searchable: !0,
+  key: "KL",
+  source: "stog"
+}, {
+  value: "Karlslunde",
+  searchable: !0,
+  key: "KLU",
+  source: "stog"
+}, {
+  value: "Nørreport",
+  searchable: !0,
+  key: "KN",
+  source: "stog"
+}, {
+  value: "Allerød",
+  searchable: !0,
+  key: "LI",
+  source: "stog"
+}, {
+  value: "Lyngby",
+  searchable: !0,
+  key: "LY",
+  source: "stog"
+}, {
+  value: "Malmparken",
+  searchable: !0,
+  key: "MPT",
+  source: "stog"
+}, {
+  value: "Måløv",
+  searchable: !0,
+  key: "MW",
+  source: "stog"
+}, {
+  value: "København Syd",
+  searchable: !0,
+  key: "NEL",
+  source: "stog"
+}, {
+  value: "Nordhavn",
+  searchable: !0,
+  key: "NHT",
+  source: "stog"
+}, {
+  value: "Nørrebro",
+  searchable: !0,
+  key: "NØ",
+  source: "stog"
+}, {
+  value: "Ordrup",
+  searchable: !0,
+  key: "OP",
+  source: "stog"
+}, {
+  value: "Peter Bangs Vej",
+  searchable: !0,
+  key: "PBT",
+  source: "stog"
+}, {
+  value: "Rødovre",
+  searchable: !0,
+  key: "RDO",
+  source: "stog"
+}, {
+  value: "Ryparken",
+  searchable: !0,
+  key: "RYT",
+  source: "stog"
+}, {
+  value: "Svanemøllen",
+  searchable: !0,
+  key: "SAM",
+  source: "stog"
+}, {
+  value: "Sorgenfri",
+  searchable: !0,
+  key: "SFT",
+  source: "stog"
+}, {
+  value: "Stengården",
+  searchable: !0,
+  key: "SGT",
+  source: "stog"
+}, {
+  value: "Sjælør",
+  searchable: !0,
+  key: "SJÆ",
+  source: "stog"
+}, {
+  value: "Skovlunde",
+  searchable: !0,
+  key: "SKO",
+  source: "stog"
+}, {
+  value: "Skovbrynet",
+  searchable: !0,
+  key: "SKT",
+  source: "stog"
+}, {
+  value: "Solrød Strand",
+  searchable: !0,
+  key: "SOL",
+  source: "stog"
+}, {
+  value: "Stenløse",
+  searchable: !0,
+  key: "ST",
+  source: "stog"
+}, {
+  value: "Sydhavn",
+  searchable: !0,
+  key: "SYV",
+  source: "stog"
+}, {
+  value: "Taastrup",
+  searchable: !0,
+  key: "TÅ",
+  source: "stog"
+}, {
+  value: "Hundige",
+  searchable: !0,
+  key: "UND",
+  source: "stog"
+}, {
+  value: "Valby",
+  searchable: !0,
+  key: "VAL",
+  source: "stog"
+}, {
+  value: "Vanløse",
+  searchable: !0,
+  key: "VAN",
+  source: "stog"
+}, {
+  value: "Langgade",
+  searchable: !0,
+  key: "VAT",
+  source: "stog"
+}, {
+  value: "Vigerslev Allé",
+  searchable: !0,
+  key: "VGT",
+  source: "stog"
+}, {
+  value: "Virum",
+  searchable: !0,
+  key: "VIR",
+  source: "stog"
+}, {
+  value: "Vallensbæk",
+  searchable: !0,
+  key: "VLB",
+  source: "stog"
+}, {
+  value: "Vinge",
+  searchable: !0,
+  key: "VNG",
+  source: "stog"
+}, {
+  value: "Vesterport",
+  searchable: !0,
+  key: "VPT",
+  source: "stog"
+}, {
+  value: "Veksø",
+  searchable: !0,
+  key: "VS",
+  source: "stog"
+}, {
+  value: "Værløse",
+  searchable: !0,
+  key: "VÆR",
+  source: "stog"
+}, {
+  value: "Ølstykke",
+  searchable: !0,
+  key: "ØL",
+  source: "stog"
+}, {
+  value: "Ølby",
+  searchable: !0,
+  key: "ØLB",
+  source: "stog"
+}, {
+  value: "Ålholm",
+  searchable: !0,
+  key: "ÅLM",
+  source: "stog"
+}, {
+  value: "Åmarken",
+  searchable: !0,
+  key: "ÅM",
+  source: "stog"
+}, {
+  value: "Høvelte",
+  searchable: !1,
+  key: "HØV",
+  source: "stog"
+}];
