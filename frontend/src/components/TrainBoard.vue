@@ -35,14 +35,14 @@ const parseDate = (str) => {
 const getRelativeTime = (dateStr) => {
   const date = parseDate(dateStr)
   if (!date) return ''
-  
+
   const diffMs = date - now.value
   const diffMins = Math.floor(diffMs / 60000)
-  
+
   if (diffMins < 0) return 'Departed'
   if (diffMins === 0) return 'Now'
   if (diffMins < 60) return `${diffMins} min`
-  
+
   // Return HH:MM for later trains
   return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
 }
@@ -55,7 +55,7 @@ const formatTime = (dateStr) => {
 // Logic to check if a train stops at a specific station
 const trainStopsAt = (train, destinationStationId) => {
   if (!train.Routes) return false
-  return train.Routes.some(route => 
+  return train.Routes.some(route =>
     route.Stations && route.Stations.some(s => s.StationId === destinationStationId)
   )
 }
@@ -75,7 +75,7 @@ const trainsBtoA = computed(() => {
 const fetchDepartures = async () => {
   loading.value = true
   error.value = null
-  
+
   try {
     const [resA, resB] = await Promise.all([
       fetch(`/departure?path=/departure/${stationA.value}/dinstation/`),
@@ -113,8 +113,8 @@ onUnmounted(() => {
 })
 
 watch([stationA, stationB], () => {
-    // Optional: Auto-fetch on station change, or just let user click refresh
-    // fetchDepartures() 
+  // Optional: Auto-fetch on station change, or just let user click refresh
+  // fetchDepartures() 
 })
 
 </script>
@@ -142,7 +142,7 @@ watch([stationA, stationB], () => {
           <span class="to-arrow">→</span>
           <span class="station-code">{{ stationB }}</span>
         </h2>
-        
+
         <div class="table-wrapper">
           <table class="departure-table">
             <thead>
@@ -158,10 +158,10 @@ watch([stationA, stationB], () => {
               <tr v-for="train in trainsAtoB" :key="train.TrainId" :class="{ 'cancelled': train.IsCancelled }">
                 <td class="time-cell">{{ formatTime(train.ScheduleTime) }}</td>
                 <td class="train-cell">
-                   <div class="train-type">{{ train.PublicTrainId }}</div>
+                  <div class="train-type">{{ train.PublicTrainId }}</div>
                 </td>
                 <td class="dest-cell">
-                   {{ train.Routes?.[0]?.DestinationStationId || 'Unknown' }}
+                  {{ train.Routes?.[0]?.DestinationStationId || 'Unknown' }}
                 </td>
                 <td class="platform-cell">{{ train.TrackCurrent }}</td>
                 <td class="countdown-cell" :class="{ 'now': getRelativeTime(train.ScheduleTime) === 'Now' }">
@@ -199,18 +199,18 @@ watch([stationA, stationB], () => {
               <tr v-for="train in trainsBtoA" :key="train.TrainId" :class="{ 'cancelled': train.IsCancelled }">
                 <td class="time-cell">{{ formatTime(train.ScheduleTime) }}</td>
                 <td class="train-cell">
-                   <div class="train-type">{{ train.PublicTrainId }}</div>
+                  <div class="train-type">{{ train.PublicTrainId }}</div>
                 </td>
                 <td class="dest-cell">
-                   {{ train.Routes?.[0]?.DestinationStationId || 'Unknown' }}
+                  {{ train.Routes?.[0]?.DestinationStationId || 'Unknown' }}
                 </td>
                 <td class="platform-cell">{{ train.TrackCurrent }}</td>
                 <td class="countdown-cell" :class="{ 'now': getRelativeTime(train.ScheduleTime) === 'Now' }">
-                   {{ train.IsCancelled ? 'Cancelled' : getRelativeTime(train.ScheduleTime) }}
+                  {{ train.IsCancelled ? 'Cancelled' : getRelativeTime(train.ScheduleTime) }}
                 </td>
               </tr>
               <tr v-if="trainsBtoA.length === 0 && !loading">
-                 <td colspan="5" class="empty-state">No trains found</td>
+                <td colspan="5" class="empty-state">No trains found</td>
               </tr>
             </tbody>
           </table>
@@ -384,7 +384,8 @@ watch([stationA, stationB], () => {
 }
 
 .cancelled .train-type {
-  text-decoration: none; /* Keep train number readable? User asked for line-through row, usually implies text too */
+  text-decoration: none;
+  /* Keep train number readable? User asked for line-through row, usually implies text too */
   background: #c0392b;
   opacity: 0.7;
 }
@@ -397,7 +398,9 @@ watch([stationA, stationB], () => {
 }
 
 @keyframes blink {
-  50% { opacity: 0.5; }
+  50% {
+    opacity: 0.5;
+  }
 }
 
 @media (max-width: 768px) {

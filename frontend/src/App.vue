@@ -7,7 +7,7 @@ import TrainBoard from './components/TrainBoard.vue'
     <header>
       <h1>DSB Live Departures</h1>
     </header>
-    
+
     <main>
       <TrainBoard />
     </main>
