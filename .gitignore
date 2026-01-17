@@ -1,0 +1,43 @@
+# Dependencies
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Environment variables
+.env
+.env.*
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+error.log
+
+# Coverage
+coverage/
+
+# Cloudflare Workers
+.wrangler/
+.dev.vars
+
+# Build outputs
+dist/
+out/
+build/
+.output/
+
+# Editor/IDE
+.vscode/
+.idea/
+*.suo
+*.ntvs
+*.njsproj
+*.sln
+*.sw?
