@@ -13,6 +13,31 @@ const props = defineProps({
   }
 })
 
+// Timezone Helpers
+const cphFormatter = new Intl.DateTimeFormat('en-GB', {
+  timeZone: 'Europe/Copenhagen',
+  year: 'numeric',
+  month: 'numeric',
+  day: 'numeric',
+  hour: 'numeric',
+  minute: 'numeric',
+  second: 'numeric',
+  hour12: false
+})
+
+const getCopenhagenNow = () => {
+  const parts = cphFormatter.formatToParts(new Date())
+  const getPart = (type) => parseInt(parts.find(p => p.type === type).value, 10)
+  return new Date(
+    getPart('year'),
+    getPart('month') - 1,
+    getPart('day'),
+    getPart('hour'),
+    getPart('minute'),
+    getPart('second')
+  )
+}
+
 // State
 const stationA = ref(props.initialStationA)
 const stationB = ref(props.initialStationB)
@@ -20,7 +45,7 @@ const departuresA = ref(null)
 const departuresB = ref(null)
 const loading = ref(false)
 const error = ref(null)
-const now = ref(new Date())
+const now = ref(getCopenhagenNow())
 let timer = null
 
 // Station Data
@@ -115,7 +140,7 @@ const fetchDepartures = async () => {
 onMounted(() => {
   fetchDepartures()
   timer = setInterval(() => {
-    now.value = new Date()
+    now.value = getCopenhagenNow()
   }, 1000)
 })
 
