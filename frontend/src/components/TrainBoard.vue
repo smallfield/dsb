@@ -131,41 +131,28 @@ watch([stationA, stationB], () => {
 </script>
 
 <template>
-  <div class="train-board">
-    <div class="controls">
-      <div class="station-inputs">
-        <v-autocomplete
-          v-model="stationA"
-          :items="stationOptions"
-          item-title="value"
-          item-value="key"
-          label="Station A"
-          hide-details
-          variant="outlined"
-          bg-color="rgba(0,0,0,0.3)"
-          theme="dark"
-          density="compact"
-          class="station-autocomplete"
-        ></v-autocomplete>
-        <span class="arrow">↔</span>
-        <v-autocomplete
-          v-model="stationB"
-          :items="stationOptions"
-          item-title="value"
-          item-value="key"
-          label="Station B"
-          hide-details
-          variant="outlined"
-          bg-color="rgba(0,0,0,0.3)"
-          theme="dark"
-          density="compact"
-          class="station-autocomplete"
-        ></v-autocomplete>
-      </div>
-      <button @click="fetchDepartures" :disabled="loading" class="refresh-btn">
-        {{ loading ? 'Updating...' : 'Refresh Board' }}
-      </button>
-    </div>
+  <v-card>
+    <v-card-title>Train Board</v-card-title>
+    <v-container fluid>
+      <v-row>
+        <v-col cols="4">
+          <v-autocomplete v-model="stationA" :items="stationOptions" item-title="value" item-value="key"
+            label="Station A" hide-details density="compact"></v-autocomplete>
+        </v-col>
+        <v-col cols="auto">
+          <span class="arrow">↔</span>
+        </v-col>
+        <v-col cols="4">
+          <v-autocomplete v-model="stationB" :items="stationOptions" item-title="value" item-value="key"
+            label="Station B" hide-details density="compact"></v-autocomplete>
+        </v-col>
+        <v-col cols="auto">
+          <button @click="fetchDepartures" :disabled="loading" class="refresh-btn">
+            {{ loading ? 'Updating...' : 'Refresh Board' }}
+          </button>
+        </v-col>
+      </v-row>
+    </v-container>
 
     <div v-if="error" class="error-msg">{{ error }}</div>
 
@@ -252,7 +239,7 @@ watch([stationA, stationB], () => {
         </div>
       </div>
     </div>
-  </div>
+  </v-card>
 </template>
 
 <style scoped>
