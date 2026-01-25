@@ -59,6 +59,10 @@ const getStationName = (id) => {
   return station ? station.value : id
 }
 
+const getDepertureTime = (train) => {
+  return train.EstimatedTimeDeparture === "01-01-0001 00:00:00" ? train.ScheduleTimeDeparture : train.EstimatedTimeDeparture
+}
+
 // Date/Time Helpers
 const parseDate = (str) => {
   // Format: "DD-MM-YYYY HH:mm:ss"
@@ -204,7 +208,7 @@ watch([stationA, stationB], () => {
             </thead>
             <tbody>
               <tr v-for="train in trainsAtoB" :key="train.TrainId" :class="{ 'cancelled': train.IsCancelled }">
-                <td class="time-cell">{{ formatTime(train.EstimatedTimeDeparture) }}</td>
+                <td class="time-cell">{{ formatTime(getDepertureTime(train)) }}</td>
                 <td class="train-cell">
                   <div class="train-type">{{ train.PublicTrainId }}</div>
                 </td>
@@ -212,8 +216,8 @@ watch([stationA, stationB], () => {
                   {{ getStationName(train.Routes?.[0]?.DestinationStationId) || 'Unknown' }}
                 </td>
                 <td class="platform-cell">{{ train.TrackCurrent }}</td>
-                <td class="countdown-cell" :class="{ 'now': getRelativeTime(train.EstimatedTimeDeparture) === 'Now' }">
-                  {{ train.IsCancelled ? 'Cancelled' : getRelativeTime(train.EstimatedTimeDeparture) }}
+                <td class="countdown-cell" :class="{ 'now': getRelativeTime(getDepertureTime(train)) === 'Now' }">
+                  {{ train.IsCancelled ? 'Cancelled' : getRelativeTime(getDepertureTime(train)) }}
                 </td>
               </tr>
               <tr v-if="trainsAtoB.length === 0 && !loading">
@@ -245,7 +249,7 @@ watch([stationA, stationB], () => {
             </thead>
             <tbody>
               <tr v-for="train in trainsBtoA" :key="train.TrainId" :class="{ 'cancelled': train.IsCancelled }">
-                <td class="time-cell">{{ formatTime(train.EstimatedTimeDeparture) }}</td>
+                <td class="time-cell">{{ formatTime(getDepertureTime(train)) }}</td>
                 <td class="train-cell">
                   <div class="train-type">{{ train.PublicTrainId }}</div>
                 </td>
@@ -253,8 +257,8 @@ watch([stationA, stationB], () => {
                   {{ getStationName(train.Routes?.[0]?.DestinationStationId) || 'Unknown' }}
                 </td>
                 <td class="platform-cell">{{ train.TrackCurrent }}</td>
-                <td class="countdown-cell" :class="{ 'now': getRelativeTime(train.EstimatedTimeDeparture) === 'Now' }">
-                  {{ train.IsCancelled ? 'Cancelled' : getRelativeTime(train.EstimatedTimeDeparture) }}
+                <td class="countdown-cell" :class="{ 'now': getRelativeTime(getDepertureTime(train)) === 'Now' }">
+                  {{ train.IsCancelled ? 'Cancelled' : getRelativeTime(getDepertureTime(train)) }}
                 </td>
               </tr>
               <tr v-if="trainsBtoA.length === 0 && !loading">
