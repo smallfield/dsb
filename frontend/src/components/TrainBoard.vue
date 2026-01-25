@@ -50,7 +50,8 @@ let timer = null
 
 // Station Data
 const stationOptions = computed(() => {
-  return STATIONS.filter(s => s.searchable)
+  const searchableStations = STATIONS.filter(s => s.searchable);
+  return Array.from(new Map(searchableStations.map(s => [s.key, s])).values());
 })
 
 const getStationName = (id) => {
