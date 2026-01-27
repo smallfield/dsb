@@ -1,163 +1,192 @@
 <script setup>
-import { ref, computed, onMounted, onUnmounted, watch } from 'vue'
-import { STATIONS } from '../master/stations'
+import { ref, computed, onMounted, onUnmounted, watch } from "vue";
+import { useRoute, useRouter } from "vue-router";
+import { STATIONS } from "../master/stations";
 
-const props = defineProps({
-  initialStationA: {
-    type: String,
-    default: 'KH'
-  },
-  initialStationB: {
-    type: String,
-    default: 'ØRE'
-  }
-})
+const route = useRoute();
+const router = useRouter();
 
 // Timezone Helpers
-const cphFormatter = new Intl.DateTimeFormat('en-GB', {
-  timeZone: 'Europe/Copenhagen',
-  year: 'numeric',
-  month: 'numeric',
-  day: 'numeric',
-  hour: 'numeric',
-  minute: 'numeric',
-  second: 'numeric',
-  hour12: false
-})
+const cphFormatter = new Intl.DateTimeFormat("en-GB", {
+  timeZone: "Europe/Copenhagen",
+  year: "numeric",
+  month: "numeric",
+  day: "numeric",
+  hour: "numeric",
+  minute: "numeric",
+  second: "numeric",
+  hour12: false,
+});
 
 const getCopenhagenNow = () => {
-  const parts = cphFormatter.formatToParts(new Date())
-  const getPart = (type) => parseInt(parts.find(p => p.type === type).value, 10)
+  const parts = cphFormatter.formatToParts(new Date());
+  const getPart = (type) =>
+    parseInt(parts.find((p) => p.type === type).value, 10);
   return new Date(
-    getPart('year'),
-    getPart('month') - 1,
-    getPart('day'),
-    getPart('hour'),
-    getPart('minute'),
-    getPart('second')
-  )
-}
+    getPart("year"),
+    getPart("month") - 1,
+    getPart("day"),
+    getPart("hour"),
+    getPart("minute"),
+    getPart("second"),
+  );
+};
 
 // State
-const stationA = ref(props.initialStationA)
-const stationB = ref(props.initialStationB)
-const departuresA = ref(null)
-const departuresB = ref(null)
-const loading = ref(false)
-const error = ref(null)
-const now = ref(getCopenhagenNow())
-let timer = null
+const stationA = ref(route.params.stationA || "KH");
+const stationB = ref(route.params.stationB || "ØRE");
+const departuresA = ref(null);
+const departuresB = ref(null);
+const loading = ref(false);
+const error = ref(null);
+const now = ref(getCopenhagenNow());
+let timer = null;
 
 // Station Data
 const stationOptions = computed(() => {
-  const searchableStations = STATIONS.filter(s => s.searchable);
-  return Array.from(new Map(searchableStations.map(s => [s.key, s])).values());
-})
+  const searchableStations = STATIONS.filter((s) => s.searchable);
+  return Array.from(
+    new Map(searchableStations.map((s) => [s.key, s])).values(),
+  );
+});
 
 const getStationName = (id) => {
-  const station = STATIONS.find(s => s.key === id)
-  return station ? station.value : id
-}
+  const station = STATIONS.find((s) => s.key === id);
+  return station ? station.value : id;
+};
 
 const getDepertureTime = (train) => {
-  return train.EstimatedTimeDeparture === "01-01-0001 00:00:00" ? train.ScheduleTimeDeparture : train.EstimatedTimeDeparture
-}
+  return train.EstimatedTimeDeparture === "01-01-0001 00:00:00"
+    ? train.ScheduleTimeDeparture
+    : train.EstimatedTimeDeparture;
+};
 
 // Date/Time Helpers
 const parseDate = (str) => {
   // Format: "DD-MM-YYYY HH:mm:ss"
-  if (!str) return null
-  const [datePart, timePart] = str.split(' ')
-  const [day, month, year] = datePart.split('-')
-  const [hour, minute, second] = timePart.split(':')
-  return new Date(year, month - 1, day, hour, minute, second)
-}
+  if (!str) return null;
+  const [datePart, timePart] = str.split(" ");
+  const [day, month, year] = datePart.split("-");
+  const [hour, minute, second] = timePart.split(":");
+  return new Date(year, month - 1, day, hour, minute, second);
+};
 
 const getRelativeTime = (dateStr) => {
-  const date = parseDate(dateStr)
-  if (!date) return ''
+  const date = parseDate(dateStr);
+  if (!date) return "";
 
-  const diffMs = date - now.value
-  const diffMins = Math.floor(diffMs / 60000)
+  const diffMs = date - now.value;
+  const diffMins = Math.floor(diffMs / 60000);
 
-  if (diffMins < 0) return 'Departed'
-  if (diffMins === 0) return 'Now'
-  if (diffMins < 60) return `${diffMins} min`
+  if (diffMins < 0) return "Departed";
+  if (diffMins === 0) return "Now";
+  if (diffMins < 60) return `${diffMins} min`;
 
   // Return HH:MM for later trains
-  return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-}
+  return date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+};
 
 const formatTime = (dateStr) => {
-  const date = parseDate(dateStr)
-  return date ? date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : ''
-}
+  const date = parseDate(dateStr);
+  return date
+    ? date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
+    : "";
+};
 
 // Logic to check if a train stops at a specific station
 const trainStopsAt = (train, destinationStationId) => {
-  if (!train.Routes) return false
-  return train.Routes.some(route =>
-    route.Stations && route.Stations.some(s => s.StationId === destinationStationId)
-  )
-}
+  if (!train.Routes) return false;
+  return train.Routes.some(
+    (route) =>
+      route.Stations &&
+      route.Stations.some((s) => s.StationId === destinationStationId),
+  );
+};
 
 // Filtered Computed Properties
 const trainsAtoB = computed(() => {
-  if (!departuresA.value?.Trains) return []
-  return departuresA.value.Trains.filter(train => trainStopsAt(train, stationB.value))
-})
+  if (!departuresA.value?.Trains) return [];
+  return departuresA.value.Trains.filter((train) =>
+    trainStopsAt(train, stationB.value),
+  );
+});
 
 const trainsBtoA = computed(() => {
-  if (!departuresB.value?.Trains) return []
-  return departuresB.value.Trains.filter(train => trainStopsAt(train, stationA.value))
-})
+  if (!departuresB.value?.Trains) return [];
+  return departuresB.value.Trains.filter((train) =>
+    trainStopsAt(train, stationA.value),
+  );
+});
 
 // Fetching Data
 const fetchDepartures = async () => {
-  loading.value = true
-  error.value = null
+  loading.value = true;
+  error.value = null;
 
   try {
     const [resA, resB] = await Promise.all([
       fetch(`/departure?path=/departure/${stationA.value}/dinstation/`),
-      fetch(`/departure?path=/departure/${stationB.value}/dinstation/`)
-    ])
+      fetch(`/departure?path=/departure/${stationB.value}/dinstation/`),
+    ]);
 
-    if (!resA.ok) throw new Error(`Failed to fetch ${getStationName(stationA.value)}: ${resA.status}`)
-    if (!resB.ok) throw new Error(`Failed to fetch ${getStationName(stationB.value)}: ${resB.status}`)
+    if (!resA.ok)
+      throw new Error(
+        `Failed to fetch ${getStationName(stationA.value)}: ${resA.status}`,
+      );
+    if (!resB.ok)
+      throw new Error(
+        `Failed to fetch ${getStationName(stationB.value)}: ${resB.status}`,
+      );
 
-    const dataA = await resA.json()
-    const dataB = await resB.json()
+    const dataA = await resA.json();
+    const dataB = await resB.json();
 
     // Handle nested structure if necessary (based on API viewing earlier)
-    departuresA.value = dataA.data || dataA
-    departuresB.value = dataB.data || dataB
-
+    departuresA.value = dataA.data || dataA;
+    departuresB.value = dataB.data || dataB;
   } catch (e) {
-    console.error(e)
-    error.value = e.message
+    console.error(e);
+    error.value = e.message;
   } finally {
-    loading.value = false
+    loading.value = false;
   }
-}
+};
 
 // Lifecycle
 onMounted(() => {
-  fetchDepartures()
+  // Initial fetch called via watcher or manually if desired, but here we let the watcher handle it if we set immediate,
+  // OR we just call it once here and let watchers handle updates.
+  // Ideally, initializing the route will trigger the component creation.
+  fetchDepartures();
+
   timer = setInterval(() => {
-    now.value = getCopenhagenNow()
-  }, 1000)
-})
+    now.value = getCopenhagenNow();
+  }, 1000);
+});
 
 onUnmounted(() => {
-  if (timer) clearInterval(timer)
-})
+  if (timer) clearInterval(timer);
+});
 
-watch([stationA, stationB], () => {
-  // Optional: Auto-fetch on station change, or just let user click refresh
-  // fetchDepartures() 
-})
+watch(
+  () => route.params,
+  (newParams) => {
+    if (newParams.stationA && newParams.stationB) {
+      stationA.value = newParams.stationA;
+      stationB.value = newParams.stationB;
+      fetchDepartures();
+    }
+  },
+);
 
+watch([stationA, stationB], ([newA, newB]) => {
+  if (newA !== route.params.stationA || newB !== route.params.stationB) {
+    router.replace({
+      name: "TrainBoard",
+      params: { stationA: newA, stationB: newB },
+    });
+  }
+});
 </script>
 
 <template>
@@ -166,19 +195,37 @@ watch([stationA, stationB], () => {
     <v-container fluid>
       <v-row>
         <v-col cols="4">
-          <v-autocomplete v-model="stationA" :items="stationOptions" item-title="value" item-value="key"
-            label="Station A" hide-details density="compact"></v-autocomplete>
+          <v-autocomplete
+            v-model="stationA"
+            :items="stationOptions"
+            item-title="value"
+            item-value="key"
+            label="Station A"
+            hide-details
+            density="compact"
+          ></v-autocomplete>
         </v-col>
         <v-col cols="auto">
           <span class="arrow">↔</span>
         </v-col>
         <v-col cols="4">
-          <v-autocomplete v-model="stationB" :items="stationOptions" item-title="value" item-value="key"
-            label="Station B" hide-details density="compact"></v-autocomplete>
+          <v-autocomplete
+            v-model="stationB"
+            :items="stationOptions"
+            item-title="value"
+            item-value="key"
+            label="Station B"
+            hide-details
+            density="compact"
+          ></v-autocomplete>
         </v-col>
         <v-col cols="auto">
-          <button @click="fetchDepartures" :disabled="loading" class="refresh-btn">
-            {{ loading ? 'Updating...' : 'Refresh Board' }}
+          <button
+            @click="fetchDepartures"
+            :disabled="loading"
+            class="refresh-btn"
+          >
+            {{ loading ? "Updating..." : "Refresh Board" }}
           </button>
         </v-col>
       </v-row>
@@ -203,21 +250,39 @@ watch([stationA, stationB], () => {
                 <th>Train</th>
                 <th>To</th>
                 <th>Plat.</th>
-                <th style="text-align: right;">Dep.</th>
+                <th style="text-align: right">Dep.</th>
               </tr>
             </thead>
             <tbody>
-              <tr v-for="train in trainsAtoB" :key="train.TrainId" :class="{ 'cancelled': train.IsCancelled }">
-                <td class="time-cell">{{ formatTime(getDepertureTime(train)) }}</td>
+              <tr
+                v-for="train in trainsAtoB"
+                :key="train.TrainId"
+                :class="{ cancelled: train.IsCancelled }"
+              >
+                <td class="time-cell">
+                  {{ formatTime(getDepertureTime(train)) }}
+                </td>
                 <td class="train-cell">
                   <div class="train-type">{{ train.PublicTrainId }}</div>
                 </td>
                 <td class="dest-cell">
-                  {{ getStationName(train.Routes?.[0]?.DestinationStationId) || 'Unknown' }}
+                  {{
+                    getStationName(train.Routes?.[0]?.DestinationStationId) ||
+                    "Unknown"
+                  }}
                 </td>
                 <td class="platform-cell">{{ train.TrackCurrent }}</td>
-                <td class="countdown-cell" :class="{ 'now': getRelativeTime(getDepertureTime(train)) === 'Now' }">
-                  {{ train.IsCancelled ? 'Cancelled' : getRelativeTime(getDepertureTime(train)) }}
+                <td
+                  class="countdown-cell"
+                  :class="{
+                    now: getRelativeTime(getDepertureTime(train)) === 'Now',
+                  }"
+                >
+                  {{
+                    train.IsCancelled
+                      ? "Cancelled"
+                      : getRelativeTime(getDepertureTime(train))
+                  }}
                 </td>
               </tr>
               <tr v-if="trainsAtoB.length === 0 && !loading">
@@ -244,21 +309,39 @@ watch([stationA, stationB], () => {
                 <th>Train</th>
                 <th>To</th>
                 <th>Plat.</th>
-                <th style="">Dep.</th>
+                <th style="text-align: right">Dep.</th>
               </tr>
             </thead>
             <tbody>
-              <tr v-for="train in trainsBtoA" :key="train.TrainId" :class="{ 'cancelled': train.IsCancelled }">
-                <td class="time-cell">{{ formatTime(getDepertureTime(train)) }}</td>
+              <tr
+                v-for="train in trainsBtoA"
+                :key="train.TrainId"
+                :class="{ cancelled: train.IsCancelled }"
+              >
+                <td class="time-cell">
+                  {{ formatTime(getDepertureTime(train)) }}
+                </td>
                 <td class="train-cell">
                   <div class="train-type">{{ train.PublicTrainId }}</div>
                 </td>
                 <td class="dest-cell">
-                  {{ getStationName(train.Routes?.[0]?.DestinationStationId) || 'Unknown' }}
+                  {{
+                    getStationName(train.Routes?.[0]?.DestinationStationId) ||
+                    "Unknown"
+                  }}
                 </td>
                 <td class="platform-cell">{{ train.TrackCurrent }}</td>
-                <td class="countdown-cell" :class="{ 'now': getRelativeTime(getDepertureTime(train)) === 'Now' }">
-                  {{ train.IsCancelled ? 'Cancelled' : getRelativeTime(getDepertureTime(train)) }}
+                <td
+                  class="countdown-cell"
+                  :class="{
+                    now: getRelativeTime(getDepertureTime(train)) === 'Now',
+                  }"
+                >
+                  {{
+                    train.IsCancelled
+                      ? "Cancelled"
+                      : getRelativeTime(getDepertureTime(train))
+                  }}
                 </td>
               </tr>
               <tr v-if="trainsBtoA.length === 0 && !loading">
@@ -277,7 +360,7 @@ watch([stationA, stationB], () => {
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-family: "Segoe UI", system-ui, sans-serif;
   color: #fff;
 }
 

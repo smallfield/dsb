@@ -1,6 +1,4 @@
-<script setup>
-import TrainBoard from './components/TrainBoard.vue'
-</script>
+<script setup></script>
 
 <template>
   <v-app theme="dark">
@@ -10,7 +8,7 @@ import TrainBoard from './components/TrainBoard.vue'
       </header>
 
       <main>
-        <TrainBoard />
+        <router-view />
       </main>
     </div>
   </v-app>
