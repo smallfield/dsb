@@ -61,6 +61,23 @@ const getDepertureTime = (train) => {
     : train.EstimatedTimeDeparture;
 };
 
+const getDelay = (train) => {
+  if (
+    !train.EstimatedTimeDeparture ||
+    !train.ScheduleTimeDeparture ||
+    train.EstimatedTimeDeparture === "01-01-0001 00:00:00"
+  )
+    return 0;
+  const scheduled = parseDate(train.ScheduleTimeDeparture);
+  const estimated = parseDate(train.EstimatedTimeDeparture);
+  if (!scheduled || !estimated) return 0;
+  return Math.floor((estimated - scheduled) / 60000);
+};
+
+const isDelayed = (train) => {
+  return getDelay(train) > 0;
+};
+
 // Date/Time Helpers
 const parseDate = (str) => {
   // Format: "DD-MM-YYYY HH:mm:ss"
@@ -84,14 +101,17 @@ const getRelativeTime = (dateStr) => {
   if (diffMins < 60) return `${diffMins} min`;
 
   // Return HH:MM for later trains
-  return date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+  const hours = date.getHours().toString().padStart(2, "0");
+  const minutes = date.getMinutes().toString().padStart(2, "0");
+  return `${hours}:${minutes}`;
 };
 
 const formatTime = (dateStr) => {
   const date = parseDate(dateStr);
-  return date
-    ? date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
-    : "";
+  if (!date) return "";
+  const hours = date.getHours().toString().padStart(2, "0");
+  const minutes = date.getMinutes().toString().padStart(2, "0");
+  return `${hours}:${minutes}`;
 };
 
 // Logic to check if a train stops at a specific station
@@ -261,7 +281,17 @@ watch([stationA, stationB], ([newA, newB]) => {
                 :class="{ cancelled: train.IsCancelled }"
               >
                 <td class="time-cell">
-                  {{ formatTime(getDepertureTime(train)) }}
+                  <div v-if="isDelayed(train)">
+                    <span class="scheduled-time-strike">
+                      {{ formatTime(train.ScheduleTimeDeparture) }}
+                    </span>
+                    <div class="estimated-time">
+                      {{ formatTime(train.EstimatedTimeDeparture) }}
+                    </div>
+                  </div>
+                  <div v-else>
+                    {{ formatTime(getDepertureTime(train)) }}
+                  </div>
                 </td>
                 <td class="train-cell">
                   <div class="train-type">{{ train.PublicTrainId }}</div>
@@ -320,7 +350,17 @@ watch([stationA, stationB], ([newA, newB]) => {
                 :class="{ cancelled: train.IsCancelled }"
               >
                 <td class="time-cell">
-                  {{ formatTime(getDepertureTime(train)) }}
+                  <div v-if="isDelayed(train)">
+                    <span class="scheduled-time-strike">
+                      {{ formatTime(train.ScheduleTimeDeparture) }}
+                    </span>
+                    <div class="estimated-time">
+                      {{ formatTime(train.EstimatedTimeDeparture) }}
+                    </div>
+                  </div>
+                  <div v-else>
+                    {{ formatTime(getDepertureTime(train)) }}
+                  </div>
                 </td>
                 <td class="train-cell">
                   <div class="train-type">{{ train.PublicTrainId }}</div>
@@ -523,6 +563,18 @@ watch([stationA, stationB], ([newA, newB]) => {
   /* Keep train number readable? User asked for line-through row, usually implies text too */
   background: #c0392b;
   opacity: 0.7;
+}
+
+.scheduled-time-strike {
+  text-decoration: line-through;
+  color: #95a5a6;
+  font-size: 0.9em;
+  display: block;
+}
+
+.estimated-time {
+  color: inherit;
+  font-weight: bold;
 }
 
 .empty-state {
