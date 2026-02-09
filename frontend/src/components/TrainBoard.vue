@@ -82,6 +82,12 @@ const isCancelled = (train) => {
   return train.IsCancelled;
 };
 
+const showDebugInfo = (train) => {
+  alert(
+    `IsCancelled: ${train.IsCancelled}\nIsCancelledArrival: ${train.IsCancelledArrival}\nIsCancelledDeparture: ${train.IsCancelledDeparture}`,
+  );
+};
+
 // Date/Time Helpers
 const parseDate = (str) => {
   // Format: "DD-MM-YYYY HH:mm:ss"
@@ -283,6 +289,7 @@ watch([stationA, stationB], ([newA, newB]) => {
                 v-for="train in trainsAtoB"
                 :key="train.TrainId"
                 :class="{ cancelled: isCancelled(train) }"
+                @click="showDebugInfo(train)"
               >
                 <td class="time-cell">
                   <div v-if="isDelayed(train)">
@@ -352,6 +359,7 @@ watch([stationA, stationB], ([newA, newB]) => {
                 v-for="train in trainsBtoA"
                 :key="train.TrainId"
                 :class="{ cancelled: isCancelled(train) }"
+                @click="showDebugInfo(train)"
               >
                 <td class="time-cell">
                   <div v-if="isDelayed(train)">
