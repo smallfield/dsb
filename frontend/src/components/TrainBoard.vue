@@ -78,6 +78,10 @@ const isDelayed = (train) => {
   return getDelay(train) > 0;
 };
 
+const isCancelled = (train) => {
+  return train.IsCancelled;
+};
+
 // Date/Time Helpers
 const parseDate = (str) => {
   // Format: "DD-MM-YYYY HH:mm:ss"
@@ -278,7 +282,7 @@ watch([stationA, stationB], ([newA, newB]) => {
               <tr
                 v-for="train in trainsAtoB"
                 :key="train.TrainId"
-                :class="{ cancelled: train.IsCancelled }"
+                :class="{ cancelled: isCancelled(train) }"
               >
                 <td class="time-cell">
                   <div v-if="isDelayed(train)">
@@ -310,7 +314,7 @@ watch([stationA, stationB], ([newA, newB]) => {
                   }"
                 >
                   {{
-                    train.IsCancelled
+                    isCancelled(train)
                       ? "Cancelled"
                       : getRelativeTime(getDepertureTime(train))
                   }}
@@ -347,7 +351,7 @@ watch([stationA, stationB], ([newA, newB]) => {
               <tr
                 v-for="train in trainsBtoA"
                 :key="train.TrainId"
-                :class="{ cancelled: train.IsCancelled }"
+                :class="{ cancelled: isCancelled(train) }"
               >
                 <td class="time-cell">
                   <div v-if="isDelayed(train)">
@@ -379,7 +383,7 @@ watch([stationA, stationB], ([newA, newB]) => {
                   }"
                 >
                   {{
-                    train.IsCancelled
+                    isCancelled(train)
                       ? "Cancelled"
                       : getRelativeTime(getDepertureTime(train))
                   }}
