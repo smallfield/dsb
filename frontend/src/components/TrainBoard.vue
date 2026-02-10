@@ -55,6 +55,15 @@ const getStationName = (id) => {
   return station ? station.value : id;
 };
 
+const customFilter = (itemTitle, queryText, item) => {
+  const normalize = (text) => {
+    return text ? text.toString().toLowerCase().replace(/ø/g, "o") : "";
+  };
+  const text = normalize(itemTitle);
+  const query = normalize(queryText);
+  return text.indexOf(query) > -1;
+};
+
 const getDepertureTime = (train) => {
   return train.EstimatedTimeDeparture === "01-01-0001 00:00:00"
     ? train.ScheduleTimeDeparture
@@ -86,7 +95,7 @@ const isCancelled = (train) => {
 
 const showDebugInfo = (train) => {
   alert(
-    `IsCancelled: ${train.IsCancelled}\nIsCancelledArrival: ${train.IsCancelledArrival}\nIsCancelledDeparture: ${train.IsCancelledDeparture}`,
+    `IsCancelled: ${train.IsCancelled}\nIsCancelledArrival: ${train.IsCancelledArrival}\nIsCancelledDeparture: ${train.IsCancelledDeparture}\n\nScheduleTimeArrival: ${train.ScheduleTimeArrival}\nEstimatedTimeArrival: ${train.EstimatedTimeArrival}\nScheduleTimeDeparture: ${train.ScheduleTimeDeparture}\nEstimatedTimeDeparture: ${train.EstimatedTimeDeparture}`,
   );
 };
 
@@ -235,6 +244,7 @@ watch([stationA, stationB], ([newA, newB]) => {
             item-value="key"
             label="Station A"
             hide-details
+            :custom-filter="customFilter"
             density="compact"
           ></v-autocomplete>
         </v-col>
@@ -249,6 +259,7 @@ watch([stationA, stationB], ([newA, newB]) => {
             item-value="key"
             label="Station B"
             hide-details
+            :custom-filter="customFilter"
             density="compact"
           ></v-autocomplete>
         </v-col>
