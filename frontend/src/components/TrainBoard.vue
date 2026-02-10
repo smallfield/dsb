@@ -107,7 +107,7 @@ const getRelativeTime = (dateStr) => {
   const diffMins = Math.floor(diffMs / 60000);
 
   if (diffMins < 0) return "Departed";
-  if (diffSecs >= 0 && diffSecs < 60) return `${diffSecs} s`; // Show seconds if within 1 minute
+  if (diffSecs >= 0 && diffSecs < 100) return `${diffSecs} s`; // Show seconds if within 100 seconds
   if (diffMins < 60) return `${diffMins} min`;
 
   // Return HH:MM for later trains
