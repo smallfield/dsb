@@ -79,7 +79,9 @@ const isDelayed = (train) => {
 };
 
 const isCancelled = (train) => {
-  return train.IsCancelled;
+  return (
+    train.IsCancelled && train.IsCancelledDeparture && train.IsCancelledArrival
+  );
 };
 
 const showDebugInfo = (train) => {
