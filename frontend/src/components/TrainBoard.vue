@@ -236,7 +236,7 @@ watch([stationA, stationB], ([newA, newB]) => {
     <v-card-title>Train Board</v-card-title>
     <v-container fluid>
       <v-row>
-        <v-col cols="4">
+        <v-col cols="12" class="pb-1">
           <v-autocomplete
             v-model="stationA"
             :items="stationOptions"
@@ -248,10 +248,10 @@ watch([stationA, stationB], ([newA, newB]) => {
             density="compact"
           ></v-autocomplete>
         </v-col>
-        <v-col cols="auto">
-          <span class="arrow">↔</span>
+        <v-col cols="12" class="py-0" style="text-align: center">
+          <span class="arrow">↕</span>
         </v-col>
-        <v-col cols="4">
+        <v-col cols="12" class="pt-1 pb-4">
           <v-autocomplete
             v-model="stationB"
             :items="stationOptions"
@@ -263,11 +263,12 @@ watch([stationA, stationB], ([newA, newB]) => {
             density="compact"
           ></v-autocomplete>
         </v-col>
-        <v-col cols="auto">
+        <v-col cols="12" style="text-align: center">
           <button
             @click="fetchDepartures"
             :disabled="loading"
             class="refresh-btn"
+            style="width: 100%"
           >
             {{ loading ? "Updating..." : "Refresh Board" }}
           </button>
@@ -453,7 +454,7 @@ watch([stationA, stationB], ([newA, newB]) => {
 }
 
 .arrow {
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: #aaa;
 }
 
