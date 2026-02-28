@@ -145,6 +145,19 @@ const trainStopsAt = (train, destinationStationId) => {
   );
 };
 
+const getExpectedArrivalTime = (train, destinationStationId) => {
+  if (!train.Routes) return null;
+  for (const route of train.Routes) {
+    if (route.Stations) {
+      const station = route.Stations.find((s) => s.StationId === destinationStationId);
+      if (station && station.ExpectedDateTime && station.ExpectedDateTime !== "01-01-0001 00:00:00") {
+        return station.ExpectedDateTime;
+      }
+    }
+  }
+  return null;
+};
+
 // Filtered Computed Properties
 const trainsAtoB = computed(() => {
   if (!departuresA.value?.Trains) return [];
@@ -294,6 +307,7 @@ watch([stationA, stationB], ([newA, newB]) => {
                 <th>Time</th>
                 <th>Train</th>
                 <th>To</th>
+                <th>Arr.</th>
                 <th>Plat.</th>
                 <th style="text-align: right">Dep.</th>
               </tr>
@@ -327,6 +341,9 @@ watch([stationA, stationB], ([newA, newB]) => {
                     "Unknown"
                   }}
                 </td>
+                <td class="arr-cell">
+                  {{ formatTime(getExpectedArrivalTime(train, stationB)) || '-' }}
+                </td>
                 <td class="platform-cell">{{ train.TrackCurrent }}</td>
                 <td
                   class="countdown-cell"
@@ -342,7 +359,7 @@ watch([stationA, stationB], ([newA, newB]) => {
                 </td>
               </tr>
               <tr v-if="trainsAtoB.length === 0 && !loading">
-                <td colspan="5" class="empty-state">No trains found</td>
+                <td colspan="6" class="empty-state">No trains found</td>
               </tr>
             </tbody>
           </table>
@@ -364,6 +381,7 @@ watch([stationA, stationB], ([newA, newB]) => {
                 <th>Time</th>
                 <th>Train</th>
                 <th>To</th>
+                <th>Arr.</th>
                 <th>Plat.</th>
                 <th style="text-align: right">Dep.</th>
               </tr>
@@ -397,6 +415,9 @@ watch([stationA, stationB], ([newA, newB]) => {
                     "Unknown"
                   }}
                 </td>
+                <td class="arr-cell">
+                  {{ formatTime(getExpectedArrivalTime(train, stationA)) || '-' }}
+                </td>
                 <td class="platform-cell">{{ train.TrackCurrent }}</td>
                 <td
                   class="countdown-cell"
@@ -412,7 +433,7 @@ watch([stationA, stationB], ([newA, newB]) => {
                 </td>
               </tr>
               <tr v-if="trainsBtoA.length === 0 && !loading">
-                <td colspan="5" class="empty-state">No trains found</td>
+                <td colspan="6" class="empty-state">No trains found</td>
               </tr>
             </tbody>
           </table>
@@ -551,6 +572,11 @@ watch([stationA, stationB], ([newA, newB]) => {
 
 .dest-cell {
   color: #ecf0f1;
+}
+
+.arr-cell {
+  color: #ecf0f1;
+  text-align: center;
 }
 
 .platform-cell {
