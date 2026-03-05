@@ -250,39 +250,18 @@ watch([stationA, stationB], ([newA, newB]) => {
     <v-container fluid>
       <v-row>
         <v-col cols="12" class="pb-1">
-          <v-autocomplete
-            v-model="stationA"
-            :items="stationOptions"
-            item-title="value"
-            item-value="key"
-            label="Station A"
-            hide-details
-            :custom-filter="customFilter"
-            density="compact"
-          ></v-autocomplete>
+          <v-autocomplete v-model="stationA" :items="stationOptions" item-title="value" item-value="key"
+            label="Station A" hide-details :custom-filter="customFilter" density="compact"></v-autocomplete>
         </v-col>
         <v-col cols="12" class="py-0" style="text-align: center">
           <span class="arrow">↕</span>
         </v-col>
         <v-col cols="12" class="pt-1 pb-4">
-          <v-autocomplete
-            v-model="stationB"
-            :items="stationOptions"
-            item-title="value"
-            item-value="key"
-            label="Station B"
-            hide-details
-            :custom-filter="customFilter"
-            density="compact"
-          ></v-autocomplete>
+          <v-autocomplete v-model="stationB" :items="stationOptions" item-title="value" item-value="key"
+            label="Station B" hide-details :custom-filter="customFilter" density="compact"></v-autocomplete>
         </v-col>
         <v-col cols="12" style="text-align: center">
-          <button
-            @click="fetchDepartures"
-            :disabled="loading"
-            class="refresh-btn"
-            style="width: 100%"
-          >
+          <button @click="fetchDepartures" :disabled="loading" class="refresh-btn" style="width: 100%">
             {{ loading ? "Updating..." : "Refresh Board" }}
           </button>
         </v-col>
@@ -313,12 +292,8 @@ watch([stationA, stationB], ([newA, newB]) => {
               </tr>
             </thead>
             <tbody>
-              <tr
-                v-for="train in trainsAtoB"
-                :key="train.TrainId"
-                :class="{ cancelled: isCancelled(train) }"
-                @click="showDebugInfo(train)"
-              >
+              <tr v-for="train in trainsAtoB" :key="train.TrainId" :class="{ cancelled: isCancelled(train) }"
+                @click="showDebugInfo(train)">
                 <td class="time-cell">
                   <div v-if="isDelayed(train)">
                     <span class="scheduled-time-strike">
@@ -344,13 +319,22 @@ watch([stationA, stationB], ([newA, newB]) => {
                 <td class="arr-cell">
                   {{ formatTime(getExpectedArrivalTime(train, stationB)) || '-' }}
                 </td>
-                <td class="platform-cell">{{ train.TrackCurrent }}</td>
-                <td
-                  class="countdown-cell"
-                  :class="{
-                    now: getRelativeTime(getDepertureTime(train)) === 'Now',
-                  }"
-                >
+                <td class="platform-cell">
+                  <div v-if="train.TrackCurrent !== train.TrackOriginal && train.TrackOriginal != null">
+                    <span class="scheduled-time-strike">
+                      {{ train.TrackOriginal }}
+                    </span>
+                    <div class="estimated-time">
+                      {{ train.TrackCurrent }}
+                    </div>
+                  </div>
+                  <div v-else>
+                    {{ train.TrackCurrent }}
+                  </div>
+                </td>
+                <td class="countdown-cell" :class="{
+                  now: getRelativeTime(getDepertureTime(train)) === 'Now',
+                }">
                   {{
                     isCancelled(train)
                       ? "Cancelled"
@@ -387,12 +371,8 @@ watch([stationA, stationB], ([newA, newB]) => {
               </tr>
             </thead>
             <tbody>
-              <tr
-                v-for="train in trainsBtoA"
-                :key="train.TrainId"
-                :class="{ cancelled: isCancelled(train) }"
-                @click="showDebugInfo(train)"
-              >
+              <tr v-for="train in trainsBtoA" :key="train.TrainId" :class="{ cancelled: isCancelled(train) }"
+                @click="showDebugInfo(train)">
                 <td class="time-cell">
                   <div v-if="isDelayed(train)">
                     <span class="scheduled-time-strike">
@@ -418,13 +398,22 @@ watch([stationA, stationB], ([newA, newB]) => {
                 <td class="arr-cell">
                   {{ formatTime(getExpectedArrivalTime(train, stationA)) || '-' }}
                 </td>
-                <td class="platform-cell">{{ train.TrackCurrent }}</td>
-                <td
-                  class="countdown-cell"
-                  :class="{
-                    now: getRelativeTime(getDepertureTime(train)) === 'Now',
-                  }"
-                >
+                <td class="platform-cell">
+                  <div v-if="train.TrackCurrent !== train.TrackOriginal && train.TrackOriginal != null">
+                    <span class="scheduled-time-strike">
+                      {{ train.TrackOriginal }}
+                    </span>
+                    <div class="estimated-time">
+                      {{ train.TrackCurrent }}
+                    </div>
+                  </div>
+                  <div v-else>
+                    {{ train.TrackCurrent }}
+                  </div>
+                </td>
+                <td class="countdown-cell" :class="{
+                  now: getRelativeTime(getDepertureTime(train)) === 'Now',
+                }">
                   {{
                     isCancelled(train)
                       ? "Cancelled"
