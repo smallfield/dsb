@@ -284,8 +284,7 @@ watch([stationA, stationB], ([newA, newB]) => {
             <thead>
               <tr>
                 <th>Time</th>
-                <th>Train</th>
-                <th>To</th>
+                <th>Train / To</th>
                 <th>Arr.</th>
                 <th>Plat.</th>
                 <th style="text-align: right">Dep.</th>
@@ -307,14 +306,14 @@ watch([stationA, stationB], ([newA, newB]) => {
                     {{ formatTime(getDepertureTime(train)) }}
                   </div>
                 </td>
-                <td class="train-cell">
+                <td class="train-dest-cell">
                   <div class="train-type">{{ train.PublicTrainId }}</div>
-                </td>
-                <td class="dest-cell">
-                  {{
-                    getStationName(train.Routes?.[0]?.DestinationStationId) ||
-                    "Unknown"
-                  }}
+                  <div class="dest-name">
+                    {{
+                      getStationName(train.Routes?.[0]?.DestinationStationId) ||
+                      "Unknown"
+                    }}
+                  </div>
                 </td>
                 <td class="arr-cell">
                   {{ formatTime(getExpectedArrivalTime(train, stationB)) || '-' }}
@@ -343,7 +342,7 @@ watch([stationA, stationB], ([newA, newB]) => {
                 </td>
               </tr>
               <tr v-if="trainsAtoB.length === 0 && !loading">
-                <td colspan="6" class="empty-state">No trains found</td>
+                <td colspan="5" class="empty-state">No trains found</td>
               </tr>
             </tbody>
           </table>
@@ -363,8 +362,7 @@ watch([stationA, stationB], ([newA, newB]) => {
             <thead>
               <tr>
                 <th>Time</th>
-                <th>Train</th>
-                <th>To</th>
+                <th>Train / To</th>
                 <th>Arr.</th>
                 <th>Plat.</th>
                 <th style="text-align: right">Dep.</th>
@@ -386,14 +384,14 @@ watch([stationA, stationB], ([newA, newB]) => {
                     {{ formatTime(getDepertureTime(train)) }}
                   </div>
                 </td>
-                <td class="train-cell">
+                <td class="train-dest-cell">
                   <div class="train-type">{{ train.PublicTrainId }}</div>
-                </td>
-                <td class="dest-cell">
-                  {{
-                    getStationName(train.Routes?.[0]?.DestinationStationId) ||
-                    "Unknown"
-                  }}
+                  <div class="dest-name">
+                    {{
+                      getStationName(train.Routes?.[0]?.DestinationStationId) ||
+                      "Unknown"
+                    }}
+                  </div>
                 </td>
                 <td class="arr-cell">
                   {{ formatTime(getExpectedArrivalTime(train, stationA)) || '-' }}
@@ -422,7 +420,7 @@ watch([stationA, stationB], ([newA, newB]) => {
                 </td>
               </tr>
               <tr v-if="trainsBtoA.length === 0 && !loading">
-                <td colspan="6" class="empty-state">No trains found</td>
+                <td colspan="5" class="empty-state">No trains found</td>
               </tr>
             </tbody>
           </table>
@@ -541,7 +539,7 @@ watch([stationA, stationB], ([newA, newB]) => {
 }
 
 .departure-table td {
-  padding: 0.7rem 0.3rem;
+  padding: 0.3rem 0.3rem;
   border-bottom: 1px solid #34495e;
 }
 
@@ -553,14 +551,19 @@ watch([stationA, stationB], ([newA, newB]) => {
 .train-type {
   background: #e74c3c;
   padding: 2px 6px;
-  border-radius: 4px;
-  font-size: 0.85rem;
+  border-radius: 3px;
+  font-size: 0.7rem;
   font-weight: bold;
   display: inline-block;
 }
 
-.dest-cell {
+.train-dest-cell {
+  vertical-align: middle;
+}
+
+.dest-name {
   color: #ecf0f1;
+  font-size: 0.9em;
 }
 
 .arr-cell {
@@ -593,7 +596,7 @@ watch([stationA, stationB], ([newA, newB]) => {
 }
 
 .cancelled .time-cell,
-.cancelled .dest-cell,
+.cancelled .dest-name,
 .cancelled .platform-cell,
 .cancelled .countdown-cell {
   color: #e74c3c;
